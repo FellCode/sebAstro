@@ -1,11 +1,190 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <Layout>
-	<Welcome />
+  <section class="hero">
+    <div
+      class="background-image"
+      style="background-image: url(assets/img/main/hero.webp)"
+    >
+    </div>
+    <div class="hero-content-area">
+      <h3>Willkommen bei der</h3>
+      <h1>
+        St. Sebastianus Schützenbruderschaft Horrem<br />
+        seit 1550 e.V.
+      </h1>
+      <button>Hier findest du uns</button>
+      <button>Socials</button>
+    </div>
+    <span id="scrollIndicator" class="bottom-center">
+      <!--<i class="fas fa-arrow-down fa-2x"> -->
+      <Icon name="angle-down" class="icon-md" /></span
+    >
+  </section>
+  <section class="layout-column" id="greetings">
+    <h3 class="title">Herzlich Willkommen bei den St. Sebastianus Schützen</h3>
+    <p>
+      Wir freuen uns, dass du den Weg zu uns gefunden hast und für dein
+      Interesse an unserer Bruderschaft. Nachfolgend wollen wir dir einen
+      Überblick über unsere Bruderschaft, unserer tollen Gemeinschaft, unsere
+      Feste und Veranstaltungen sowie unserem Hobby, dem Schießsport geben.<br
+      />
+      <br />
+
+      Die Geschichte zeigt, dass sich das Schützenwesen in unserer Heimat immer
+      wieder den Herausforderungen der Zeit gestellt hat und in Treue und
+      Verantwortung auch künftig zu unseren Idealen
+      <span class="bigQuote"
+        ><strong><em><br />„Für Glaube, Sitte und Heimat“</em></strong></span
+      ><br />stehen wird.<br />
+      <br />
+
+      Nun aber erstmal genug der Geschichte und unserer Grundsätze. Wir wünschen
+      Dir viel Spaß beim Stöbern auf unserer digitalen Visitenkarte.<br />
+      Unser Kontakt:
+      <a href="mailto:kontakt@seb-horrem.de">kontakt@seb-horrem.de</a>
+    </p>
+  </section>
+  <section class="layout-column">
+    <h3 class="title">Anstehende Veranstaltungen</h3>
+    <ul class="events">
+      <li>
+        <span class="date">07.09.2025</span> -
+        <span class="event">Herbstfest</span>
+      </li>
+    </ul>
+  </section>
+  <section class="layout-row">
+    <div class="content-left">
+      <h1>Schützenfest 2025</h1>
+      <h3 style="margin: 1rem 0 1rem 0">
+        Vom 30.05 bis 01.06 haben wir unser Frühlingsfest und unser Schützenfest <br
+        />
+        mit euch gefeiert.<br />
+        Bilder dazu findet ihr in unserer Galerie
+      </h3>
+      <button>Zu den Bildern</button>
+    </div>
+    <div class="content-right">
+      <img
+        alt="Plakat"
+        class="img-right"
+        src="./assets/img/main/vorstand.webp"
+      />
+    </div>
+  </section>
 </Layout>
+
+<style>
+  /*Hero Styles*/
+
+  .hero {
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    color: #fff;
+  }
+
+  .hero .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1;
+    background-color: #1f7a1f;
+  }
+
+  .hero h1 {
+    font:
+      bold 60px "Open Sans",
+      sans-serif;
+    margin-bottom: 15px;
+  }
+
+  .hero h3 {
+    font:
+      normal 28px "Open Sans",
+      sans-serif;
+    margin-bottom: 20px;
+  }
+
+  .hero a.btn {
+    padding: 20px 46px;
+  }
+
+  .hero-content-area {
+    opacity: 0;
+    margin-top: 100px;
+    animation: 1s slidefade 1s forwards;
+  }
+
+  @keyframes slidefade {
+    100% {
+      opacity: 1;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .hero {
+      min-height: 600px;
+    }
+
+    .hero h1 {
+      font-size: 24px;
+    }
+
+    .hero h3 {
+      font-size: 16px;
+    }
+  }
+
+  .lastEvent h1 {
+    font: bold 60px;
+    margin-bottom: 15px;
+  }
+
+  .content-left {
+    flex: 1;
+  }
+
+  .content-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .content-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  ul.events li {
+    margin: 10px;
+    font-size: 1.2rem;
+  }
+
+  ul.events .date {
+    font-weight: bold;
+  }
+</style>
+
+<script is:browser type="module">
+  window.addEventListener("scroll", () => {
+    const checkpoint = 300;
+    const currentScroll = window.pageYOffset;
+    const scrollIcon = document.getElementById("scrollIndicator");
+    if (!scrollIcon) return;
+
+    const opacity =
+      currentScroll <= checkpoint ? 1 - currentScroll / checkpoint : 0;
+    scrollIcon.style.opacity = opacity;
+  });
+</script>

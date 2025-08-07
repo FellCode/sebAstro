@@ -1,0 +1,199 @@
+/* quicksand-regular - latin */
+@font-face {
+	font-family: 'Quicksand';
+	font-style: normal;
+	font-weight: 400;
+	src: local(''),
+	url('../fonts/quicksand-v29-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	url('../fonts/quicksand-v29-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* quicksand-700 - latin */
+@font-face {
+	font-family: 'Quicksand';
+	font-style: normal;
+	font-weight: 700;
+	src: local(''),
+	url('../fonts/quicksand-v29-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	url('../fonts/quicksand-v29-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+	font-family: 'Quicksand';
+	font-style: normal;
+	font-weight: 300;
+	src: local(''),
+	url('../fonts/quicksand-v29-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	url('../fonts/quicksand-v29-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+/* open-sans-regular - latin */
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local(''),
+	url('../fonts/open-sans-v29-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	url('../fonts/open-sans-v29-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-700 - latin */
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	src: local(''),
+	url('../fonts/open-sans-v29-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	url('../fonts/open-sans-v29-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 300;
+	src: local(''),
+	url('../fonts/open-sans-v29-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	url('../fonts/open-sans-v29-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+html {
+	font: normal 16px sans-serif;
+	color: #555;
+	scroll-behavior: smooth;
+}
+
+h2 {
+    margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+hr {
+	width: 250px;
+	height: 3px;
+	background-color: #1f7a1f;
+	border: 0;
+	margin-bottom: 50px;
+}
+
+
+.centerHr {
+	margin: 20px auto;
+}
+
+ul,
+nav {
+	list-style: none;
+}
+
+.bigQuote {
+	font-size: 1.5em;
+}
+
+/* Link Styling */
+
+a {
+	text-decoration: none;
+	opacity: 0.85;
+	color: #fff;
+}
+
+a.btn {
+	border-radius: 4px;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+	background-color: #1f7a1f;
+	opacity: 1;
+}
+
+.bottom-center {
+	position: absolute;
+	top: 95%;
+}
+
+/* section Styling */
+
+section {
+	display: flex;
+	align-items: center;
+	padding: 100px 80px;
+}
+
+section.layout-column {
+	flex-direction: column;
+}
+
+section.layout-row {
+	flex-direction: row;
+}
+
+section:not(.hero):nth-child(even) {
+	background-color: #83cea5;
+}
+
+section:not(.hero):nth-child(odd) {
+	background-color: #d4ffe7;
+}
+
+section h3.title {
+	font: bold 32px "Open Sans", sans-serif;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+section p {
+	max-width: 775px;
+	line-height: 2;
+	padding: 0 20px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+section p.quote {
+	max-width: 1000px;
+}
+
+button {
+	padding: 12px 30px;
+	font-size: 1rem;
+	background-color: #83cea5;
+	border: none;
+	border-radius: 6px;
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button:hover {
+	background-color: #6bb38f;
+}
+
+
+@media (max-width: 800px) {
+	section {
+		padding: 50px 20px;
+	}
+
+	section p.quote {
+		max-width: 775px;
+	}
+}
+
+/* Icon Styling */
+.icon-sm {
+  width: 16px;
+  height: 16px;
+}
+.icon-md {
+  width: 32px;
+  height: 32px;
+}
+.icon-lg {
+  width: 48px;
+  height: 48px;
+}
