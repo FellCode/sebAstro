@@ -19,6 +19,7 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
     </div>
     <ScrollIndicator />
   </section>
+
   <section
     class="flex flex-col items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24 text-center"
   >
@@ -39,8 +40,8 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
   >
     <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
       <img
-        src="/assets/img/vorstand.webp"
-        alt="Kleinkaliber"
+        src={`${import.meta.env.BASE_URL}assets/img/vorstand.webp`}
+        alt="Luftgewehr und Luftpistole"
         class="rounded-md shadow-lg max-h-[400px] object-cover"
       />
     </div>
@@ -70,7 +71,7 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
   >
     <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
       <img
-        src="/assets/img/vorstand.webp"
+        src={`${import.meta.env.BASE_URL}assets/img/vorstand.webp`}
         alt="Kleinkaliber"
         class="rounded-md shadow-lg max-h-[400px] object-cover"
       />
@@ -97,8 +98,8 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
   >
     <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
       <img
-        src="/assets/img/vorstand.webp"
-        alt="Kleinkaliber"
+        src={`${import.meta.env.BASE_URL}assets/img/vorstand.webp`}
+        alt="KK-Sportpistole"
         class="rounded-md shadow-lg max-h-[400px] object-cover"
       />
     </div>
@@ -146,12 +147,16 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
     </p>
     <p class="max-w-[775px] px-5 leading-8 text-[#666] mt-2 text-left">
       <strong>Hinweis: </strong> Information für das Schießtraining der Kinder und
-      Jugendlichen findet ihr auf unserer <strong>Schützenjugend</strong> Seite<br
-      />
+      Jugendlichen findet ihr auf unserer <a
+        href={`${import.meta.env.BASE_URL}verein/schuetzenjugend`}
+        >Schützenjugend</a
+      > Seite<br />
     </p>
-    <button class="btn btn-soft btn-success mt-2"
-      ><a href="/jugend">Zur Schützenjugend</a></button
-    >
+    <button class="btn btn-soft btn-success mt-2">
+      <a href={`${import.meta.env.BASE_URL}verein/schuetzenjugend`}
+        >Zur Schützenjugend</a
+      >
+    </button>
   </section>
 
   <section
