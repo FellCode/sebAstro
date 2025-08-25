@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ScrollIndicator from "../components/ScrollIndicator.astro";
+---
+
+<Layout>
+  <section
+    class="relative flex min-h-screen flex-col items-center justify-center text-center text-white"
+  >
+    <div
+      class="absolute inset-0 -z-10 bg-cover bg-[#1f7a1f]"
+      style="background-image: url(/assets/img/hero.webp)"
+    >
+    </div>
+    <div class="mt-24">
+      <h1 class="text-[60px] font-bold font-['Open_Sans'] mb-4 text-white">
+        Amtierende Majestäten der St. Sebastianus Schützenbruderschaft Horrem<br
+        />
+        seit 1550 e.V.
+      </h1>
+    </div>
+    <ScrollIndicator />
+  </section>
+  <section
+    class="flex flex-col items-center bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 text-center"
+  >
+    <img
+      class="max-w-[800px] mb-2 border-2 rounded-sm mx-auto w-full"
+      src="/assets/img/placeholder_majestaeten.png"
+    />
+    <p class="text-[#666]">
+      Von Links nach Rechts:<br />
+      <strong> Schützenkönig</strong><em> Christian Kurm</em><br />
+      <strong>Bürgerkönigin</strong>
+      <em>Barbara,</em><br />
+      <strong>Bezirksschülerprinz</strong>
+      <em> Jannis Callsen</em>
+    </p>
+  </section>
+</Layout>

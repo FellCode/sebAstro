@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Gallery from "../components/Gallery.astro";
+import ScrollIndicator from "../components/ScrollIndicator.astro";
+---
+
+<Layout>
+  <section
+    class="relative flex min-h-screen flex-col items-center justify-center text-center text-white"
+  >
+    <div
+      class="absolute inset-0 -z-10 bg-cover bg-[#1f7a1f]"
+      style="background-image: url(/assets/img/hero.webp)"
+    >
+    </div>
+    <div class="mt-24">
+      <h1 class="text-[60px] font-bold font-['Open_Sans'] mb-4 text-white">
+        Schützenfest 2025
+      </h1>
+    </div>
+    <ScrollIndicator />
+  </section>
+  <section
+    class="bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 items-center justify-center"
+  >
+    <div>
+      <Gallery folder="assets/img/schuetzenfest_2025" />
+    </div>
+  </section>
+</Layout>

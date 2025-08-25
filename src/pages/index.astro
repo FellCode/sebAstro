@@ -1,190 +1,100 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Icon } from "astro-icon/components";
+import ScrollIndicator from "../components/ScrollIndicator.astro";
 ---
 
 <Layout>
-  <section class="hero">
+  <section
+    class="relative flex min-h-screen flex-col items-center justify-center text-center text-white"
+  >
     <div
-      class="background-image"
-      style="background-image: url(assets/img/main/hero.webp)"
+      class="absolute inset-0 -z-10 bg-cover bg-[#1f7a1f]"
+      style="background-image: url(/assets/img/hero.webp)"
     >
     </div>
-    <div class="hero-content-area">
-      <h3>Willkommen bei der</h3>
-      <h1>
+    <div class="mt-24">
+      <h3 class="text-[28px] font-normal font-['Open_Sans'] mb-5 text-white">
+        Willkommen bei der
+      </h3>
+      <h1 class="text-[60px] font-bold font-['Open_Sans'] mb-4 text-white">
         St. Sebastianus Schützenbruderschaft Horrem<br />
         seit 1550 e.V.
       </h1>
-      <button>Hier findest du uns</button>
-      <button>Socials</button>
+      <button class="btn btn-soft btn-success"
+        ><a href="/where">Hier findest du uns</a></button
+      >
+      <button class="btn btn-soft btn-success"
+        ><a href="/socials">Socials</a></button
+      >
     </div>
-    <span id="scrollIndicator" class="bottom-center">
-      <!--<i class="fas fa-arrow-down fa-2x"> -->
-      <Icon name="angle-down" class="icon-md" /></span
-    >
+    <ScrollIndicator />
   </section>
-  <section class="layout-column" id="greetings">
-    <h3 class="title">Herzlich Willkommen bei den St. Sebastianus Schützen</h3>
-    <p>
+
+  <section
+    class="flex flex-col items-center bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 text-center"
+  >
+    <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
+      Herzlich Willkommen bei den St. Sebastianus Schützen
+    </h3>
+    <p class="max-w-[775px] px-5 leading-8 text-[#666]">
       Wir freuen uns, dass du den Weg zu uns gefunden hast und für dein
       Interesse an unserer Bruderschaft. Nachfolgend wollen wir dir einen
       Überblick über unsere Bruderschaft, unserer tollen Gemeinschaft, unsere
-      Feste und Veranstaltungen sowie unserem Hobby, dem Schießsport geben.<br
-      />
-      <br />
-
-      Die Geschichte zeigt, dass sich das Schützenwesen in unserer Heimat immer
-      wieder den Herausforderungen der Zeit gestellt hat und in Treue und
-      Verantwortung auch künftig zu unseren Idealen
-      <span class="bigQuote"
-        ><strong><em><br />„Für Glaube, Sitte und Heimat“</em></strong></span
-      ><br />stehen wird.<br />
-      <br />
-
+      Feste und Veranstaltungen sowie unserem Hobby, dem Schießsport geben.
+      <span
+        class="bigQuote block text-[1.5em] font-bold italic mt-6 text-[#666]"
+        >„Für Glaube, Sitte und Heimat“</span
+      ><br />
       Nun aber erstmal genug der Geschichte und unserer Grundsätze. Wir wünschen
       Dir viel Spaß beim Stöbern auf unserer digitalen Visitenkarte.<br />
       Unser Kontakt:
-      <a href="mailto:kontakt@seb-horrem.de">kontakt@seb-horrem.de</a>
+      <a href="mailto:kontakt@seb-horrem.de" class="underline text-green-800"
+        >kontakt@seb-horrem.de</a
+      >
     </p>
   </section>
-  <section class="layout-column">
-    <h3 class="title">Anstehende Veranstaltungen</h3>
-    <ul class="events">
+
+  <section
+    class="flex flex-col items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24 text-center"
+  >
+    <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
+      Anstehende Veranstaltungen
+    </h3>
+    <ul class="text-[1.2rem] text-[#666]">
       <li>
-        <span class="date">07.09.2025</span> -
-        <span class="event">Herbstfest</span>
+        <span class="font-bold">07.09.2025</span> - <span>Herbstfest</span>
       </li>
     </ul>
   </section>
-  <section class="layout-row">
-    <div class="content-left">
-      <h1>Schützenfest 2025</h1>
-      <h3 style="margin: 1rem 0 1rem 0">
+
+  <section
+    class="flex flex-col md:flex-row bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 gap-10"
+  >
+    <div class="flex-1 flex flex-col items-center justify-center text-center">
+      <h2 class="text-[32px] font-bold font-['Open_Sans'] mb-4 text-[#666]">
+        Schützenfest 2025
+      </h2>
+      <p class="my-4 text-[#666]">
         Vom 30.05 bis 01.06 haben wir unser Frühlingsfest und unser Schützenfest <br
         />
         mit euch gefeiert.<br />
         Bilder dazu findet ihr in unserer Galerie
-      </h3>
-      <button>Zu den Bildern</button>
+      </p>
+      <div class="flew-row">
+        <button class="btn btn-soft btn-success"
+          ><a href="/majestaeten">Zu den Bildern</a></button
+        >
+        <button class="btn btn-soft btn-success"
+          ><a href="/majestaeten">Neue Majestäten</a></button
+        >
+      </div>
     </div>
-    <div class="content-right">
+    <div class="flex-1 flex justify-center">
       <img
         alt="Plakat"
-        class="img-right"
-        src="./assets/img/main/vorstand.webp"
+        class="max-w-full rounded-lg"
+        src="/assets/img/vorstand.webp"
       />
     </div>
   </section>
 </Layout>
-
-<style>
-  /*Hero Styles*/
-
-  .hero {
-    position: relative;
-    justify-content: center;
-    text-align: center;
-    min-height: 100vh;
-    color: #fff;
-  }
-
-  .hero .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    z-index: -1;
-    background-color: #1f7a1f;
-  }
-
-  .hero h1 {
-    font:
-      bold 60px "Open Sans",
-      sans-serif;
-    margin-bottom: 15px;
-  }
-
-  .hero h3 {
-    font:
-      normal 28px "Open Sans",
-      sans-serif;
-    margin-bottom: 20px;
-  }
-
-  .hero a.btn {
-    padding: 20px 46px;
-  }
-
-  .hero-content-area {
-    opacity: 0;
-    margin-top: 100px;
-    animation: 1s slidefade 1s forwards;
-  }
-
-  @keyframes slidefade {
-    100% {
-      opacity: 1;
-      margin: 0;
-    }
-  }
-
-  @media (max-width: 800px) {
-    .hero {
-      min-height: 600px;
-    }
-
-    .hero h1 {
-      font-size: 24px;
-    }
-
-    .hero h3 {
-      font-size: 16px;
-    }
-  }
-
-  .lastEvent h1 {
-    font: bold 60px;
-    margin-bottom: 15px;
-  }
-
-  .content-left {
-    flex: 1;
-  }
-
-  .content-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-
-  .content-right img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-
-  ul.events li {
-    margin: 10px;
-    font-size: 1.2rem;
-  }
-
-  ul.events .date {
-    font-weight: bold;
-  }
-</style>
-
-<script is:browser type="module">
-  window.addEventListener("scroll", () => {
-    const checkpoint = 300;
-    const currentScroll = window.pageYOffset;
-    const scrollIcon = document.getElementById("scrollIndicator");
-    if (!scrollIcon) return;
-
-    const opacity =
-      currentScroll <= checkpoint ? 1 - currentScroll / checkpoint : 0;
-    scrollIcon.style.opacity = opacity;
-  });
-</script>

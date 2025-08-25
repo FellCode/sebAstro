@@ -1,0 +1,179 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ScrollIndicator from "../components/ScrollIndicator.astro";
+---
+
+<Layout>
+  <section
+    class="relative flex min-h-screen flex-col items-center justify-center text-center text-white"
+  >
+    <div
+      class="absolute inset-0 -z-10 bg-cover bg-[#1f7a1f]"
+      style="background-image: url(/assets/img/hero.webp)"
+    >
+    </div>
+    <div class="mt-24">
+      <h1 class="text-[60px] font-bold font-['Open_Sans'] mb-4 text-white">
+        Schießsport bei uns
+      </h1>
+    </div>
+    <ScrollIndicator />
+  </section>
+  <section
+    class="flex flex-col items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24 text-center"
+  >
+    <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+      Die Schützenbruderschaft bietet die Möglichkeit zum sportlichen Schießen.
+      Wir können Luftgewehr, Luftpistole, Kleinkalibergewehr sowie KK bzw.
+      Sportpistole als Disziplinen anbieten.<br />
+      Unser primäre Ansprechpartner dafür sind:<br />
+      <strong>Schießmeisterin:</strong>
+      <em>Anne Vogel</em><br />
+      <strong>Schießstandbetreiber:</strong>
+      <em>Christian Kurm</em>
+    </p>
+  </section>
+
+  <section
+    class="flex flex-col md:flex-row-reverse items-center bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24"
+  >
+    <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
+      <img
+        src="/assets/img/vorstand.webp"
+        alt="Kleinkaliber"
+        class="rounded-md shadow-lg max-h-[400px] object-cover"
+      />
+    </div>
+
+    <div class="w-full md:w-1/2 text-center md:text-left">
+      <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
+        Luftgewehr und Luftpistole
+      </h3>
+      <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+        Auf 10 Bahnen bieten mit einer Auswahl von Vereinsgewehren
+        Trainingsmöglichkeiten für Luftgewehr und Luftpistole an. Es ist
+        natürlich auch möglich mit den eigenen Gewehren zu trainieren.
+      </p><br />
+      <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+        Für das Luftgewehr haben wir aktuell eine Mannschaft die den Verein im
+        Bereich des RSB vertreten. Bei der Luftpistole stellen wir ebenfalls
+        eine Mannschaft, allerdings nur für Wettkämpfe innerhalb des Bezirks.<br
+        />
+        <strong>Ansprechpartner:</strong>
+        <em>Anne Vogel</em> oder <em>Rolf Vogel</em>
+      </p><br />
+    </div>
+  </section>
+
+  <section
+    class="flex flex-col md:flex-row items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24"
+  >
+    <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
+      <img
+        src="/assets/img/vorstand.webp"
+        alt="Kleinkaliber"
+        class="rounded-md shadow-lg max-h-[400px] object-cover"
+      />
+    </div>
+
+    <div class="w-full md:w-1/2 text-center md:text-left">
+      <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
+        Kleinkaliber
+      </h3>
+      <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+        Hier bieten wir auf 4 Bahnen Trainingsmöglichkeiten an und können auch
+        eine begrenzte Auswahl an Gewehren für das Training bereitstellen.<br
+        /><br />
+        Auch beim Kleinkaliber stellen wir eine Mannschaft im Bereich des RSB und
+        eine Mannschaft für Wettkämpfe innerhalb des Bezirks.<br />
+        <strong>Ansprechpartner:</strong>
+        <em>Anne Vogel</em> oder <em>Rolf Vogel</em><br />
+      </p>
+    </div>
+  </section>
+
+  <section
+    class="flex flex-col md:flex-row-reverse items-center bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24"
+  >
+    <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
+      <img
+        src="/assets/img/vorstand.webp"
+        alt="Kleinkaliber"
+        class="rounded-md shadow-lg max-h-[400px] object-cover"
+      />
+    </div>
+
+    <div class="w-full md:w-1/2 text-center md:text-left">
+      <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
+        KK-Sportpistole
+      </h3>
+      <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+        Wir bieten ebenfalls Training mit KK-Sportpistolen an. Aufgrund geringer
+        Nachfrage findet dieses Training aber nur nach Rücksprache ab.<br />
+        Mannschaften für Wettkämpfe bietet wir hier bisher nicht an.<br />
+        <strong>Ansprechpartner:</strong>
+        <em>Rolf Vogel</em>
+      </p><br />
+    </div>
+  </section>
+
+  <section
+    class="flex flex-col items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24 text-center"
+  >
+    <h3 class="mb-4 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
+      Trainingszeiten
+    </h3>
+
+    <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+      Wir bieten folgende Trainingszeiten an:
+
+      <div class="my-8 space-y-4 text-[#666] text-left">
+        <div class="grid grid-cols-2 gap-x-40">
+          <span class="font-semibold">KK-Sportpistole:</span>
+          <span class="text-right"
+            >Nach Absprache Montags 17:00 - 18:00 Uhr</span
+          >
+        </div>
+        <div class="grid grid-cols-2 gap-x-40">
+          <span class="font-semibold">Reguläres Training:</span>
+          <span class="text-right">Montags 18:00 bis 20:00 Uhr</span>
+        </div>
+        <div class="grid grid-cols-2 gap-x-40">
+          <span class="font-semibold">Training für die KK-Mannschaft:</span>
+          <span class="text-right">Nach Absprache Freitags ab 19:00 Uhr </span>
+        </div>
+      </div>
+    </p>
+    <p class="max-w-[775px] px-5 leading-8 text-[#666] mt-2 text-left">
+      <strong>Hinweis: </strong> Information für das Schießtraining der Kinder und
+      Jugendlichen findet ihr auf unserer <strong>Schützenjugend</strong> Seite<br
+      />
+    </p>
+    <button class="btn btn-soft btn-success mt-2"
+      ><a href="/jugend">Zur Schützenjugend</a></button
+    >
+  </section>
+
+  <section
+    class="flex flex-col items-center bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 text-center"
+  >
+    <h3 class="mb-4 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
+      Weitere Fragen?
+    </h3>
+    <p class="max-w-[775px] px-5 leading-8 text-[#666] mt-2">
+      Wenn du noch weitere Fragen zum Schießsport hast, oder mal zum Training
+      vorbeikommen möchtest, kannst du eine kurze Nachricht an folgende Mails
+      schicken:<br />
+
+      <strong>Allgemeine Kontaktadresse:</strong>
+      <a href="mailto:kontakt@seb-horrem.de" class="link link-primary">
+        kontakt@seb-horrem.de
+      </a>
+      <br />
+      <strong>Direkt an den Schießmeister:</strong>
+      <a href="mailto:schiessmeister@seb-horrem.de" class="link link-primary">
+        schiessmeister@seb-horrem.de
+      </a>
+    </p>
+  </section>
+</Layout>

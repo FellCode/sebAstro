@@ -1,0 +1,135 @@
+---
+import fs from "fs";
+import path from "path";
+
+interface Props {
+  folder: string; // relativer Pfad aus dem /public Verzeichnis, z.B. "assets/img/gallery"
+}
+
+const { folder } = Astro.props;
+
+// Absoluter Pfad zum Ordner im `public` Verzeichnis
+const galleryDir = path.join(process.cwd(), "public", folder);
+
+// Bilder im Ordner filtern
+let imageFiles: string[] = [];
+try {
+  imageFiles = fs
+    .readdirSync(galleryDir)
+    .filter((file) => /\.(jpe?g|png|webp)$/i.test(file));
+} catch {
+  imageFiles = [];
+}
+
+const images = imageFiles.map((file) => `/${folder}/${file}`);
+---
+
+<section>
+  <div class="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-6">
+    {
+      images.map((src, i) => (
+        <img
+          src={src}
+          alt={`Bild ${i + 1}`}
+          loading="lazy"
+          role="button"
+          tabindex="0"
+          class="w-full h-[300px] rounded-md object-cover cursor-pointer transition-transform hover:scale-105 border-2  "
+          onclick={`window.openImage(${i})`}
+          onkeydown={`
+            if(event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            window.openImage(${i});
+            }
+        `}
+        />
+      ))
+    }
+  </div>
+
+  <div
+    id="overlay"
+    class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center"
+  >
+    <button
+      onclick="event.stopPropagation(); window.prevImage();"
+      class="absolute left-4 text-white text-4xl px-3 py-2 bg-black/40 hover:bg-black/60 rounded-full"
+    >
+      ‹
+    </button>
+
+    <img
+      id="overlay-img"
+      src=""
+      alt="Großansicht"
+      class="max-w-[90%] max-h-[90%] rounded-lg shadow-lg select-none"
+      onclick="event.stopPropagation();"
+    />
+
+    <button
+      onclick="event.stopPropagation(); window.nextImage();"
+      class="absolute right-4 text-white text-4xl px-3 py-2 bg-black/40 hover:bg-black/60 rounded-full"
+    >
+      ›
+    </button>
+
+    <button
+      onclick="window.closeImage();"
+      class="absolute top-4 right-4 text-white text-3xl px-3 py-1 bg-black/40 hover:bg-black/60 rounded-full"
+    >
+      ✕
+    </button>
+  </div>
+</section>
+
+<script
+  type="module"
+  is:browser
+  set:html={`
+  const images = ${JSON.stringify(images)};
+  let currentIndex = 0;
+
+  window.openImage = (index) => {
+    currentIndex = index;
+    document.getElementById('overlay').classList.remove('hidden');
+    updateImage();
+  };
+
+  window.closeImage = () => {
+    document.getElementById('overlay').classList.add('hidden');
+  };
+
+  function updateImage() {
+    document.getElementById('overlay-img').src = images[currentIndex];
+  }
+
+  window.prevImage = () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage();
+  };
+
+  window.nextImage = () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage();
+  };
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') window.closeImage();
+    if (e.key === 'ArrowLeft') window.prevImage();
+    if (e.key === 'ArrowRight') window.nextImage();
+  });
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+  document.getElementById('overlay').addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  document.getElementById('overlay').addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (Math.abs(touchEndX - touchStartX) > 50) {
+      if (touchEndX > touchStartX) window.prevImage();
+      else window.nextImage();
+    }
+  }, { passive: true });
+`}
+/>
