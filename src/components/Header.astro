@@ -3,7 +3,7 @@
     <div class="flex-1">
       <div role="button" class="btn-circle">
         <div class="w-12 rounded-full">
-          <a href="/">
+          <a href={`${import.meta.env.BASE_URL}`}>
             <img
               alt="Wappen der St. Sebastianus Horrem Schützenbruderschaft"
               src={`${import.meta.env.BASE_URL}assets/img/wappen.png`}
@@ -16,64 +16,107 @@
       <ul class="menu menu-horizontal px-2">
         <!-- Home -->
         <li class="dropdown dropdown-hover relative">
-          <a href="/" class="font-bold text-[16px]">Home</a>
+          <a href={`${import.meta.env.BASE_URL}`} class="font-bold text-[16px]"
+            >Home</a
+          >
           <ul
             class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-0 z-50"
             style="top:100%; left:0;"
           >
-            <li><a href="/where">Wo findet ihr uns</a></li>
-            <li><a href="/socials">Socials</a></li>
+            <li>
+              <a href={`${import.meta.env.BASE_URL}where`}>Wo findet ihr uns</a>
+            </li>
+            <li><a href={`${import.meta.env.BASE_URL}socials`}>Socials</a></li>
           </ul>
         </li>
 
         <!-- Aktuelles -->
         <li class="dropdown dropdown-hover relative">
-          <a href="/aktuelles" class="font-bold text-[16px]">Aktuelles</a>
+          <a
+            href={`${import.meta.env.BASE_URL}aktuelles`}
+            class="font-bold text-[16px]">Aktuelles</a
+          >
           <ul
             class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-0 z-50"
             style="top:100%; left:0;"
           >
-            <li><a href="/majestaeten">Amtierende Majestäten</a></li>
+            <li>
+              <a href={`${import.meta.env.BASE_URL}majestaeten`}
+                >Amtierende Majestäten</a>
+            </li>
           </ul>
         </li>
 
         <!-- Der Verein -->
         <li class="dropdown dropdown-hover relative">
-          <a href="/verein" class="font-bold text-[16px]">Der Verein</a>
+          <a
+            href={`${import.meta.env.BASE_URL}verein`}
+            class="font-bold text-[16px]">Der Verein</a
+          >
           <ul
             class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-0 z-50"
             style="top:100%; left:0;"
           >
-            <li><a href="/vorstand">Vorstand</a></li>
-            <li><a href="/schiesssport">Schießsport</a></li>
-            <li><a href="/verein/schuetzenjugend">Schützenjugend</a></li>
-            <li><a href="/verein/heim-vermietung">Heim + Vermietung</a></li>
+            <li>
+              <a href={`${import.meta.env.BASE_URL}vorstand`}>Vorstand</a>
+            </li>
+            <li>
+              <a href={`${import.meta.env.BASE_URL}schiesssport`}
+                >Schießsport</a>
+            </li>
+            <li>
+              <a href={`${import.meta.env.BASE_URL}verein/schuetzenjugend`}
+                >Schützenjugend</a>
+            </li>
+            <li>
+              <a href={`${import.meta.env.BASE_URL}verein/heim-vermietung`}
+                >Heim + Vermietung</a>
+            </li>
           </ul>
         </li>
 
         <!-- Infos -->
-        <li><a href="/infos" class="font-bold text-[16px]">Infos</a></li>
+        <li>
+          <a
+            href={`${import.meta.env.BASE_URL}infos`}
+            class="font-bold text-[16px]">Infos</a>
+        </li>
 
         <!-- Chronik -->
         <li class="dropdown dropdown-hover relative">
-          <a href="/chronik" class="font-bold text-[16px]">Chronik</a>
+          <a
+            href={`${import.meta.env.BASE_URL}chronik`}
+            class="font-bold text-[16px]">Chronik</a
+          >
           <ul
             class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-0 z-50"
             style="top:100%; left:0;"
           >
-            <li><a href="/chronik/majestaeten">Majestäten</a></li>
-            <li><a href="/chronik/bezirksmajestäten">Bezirksmajestäten</a></li>
+            <li>
+              <a href={`${import.meta.env.BASE_URL}chronik/majestaeten`}
+                >Majestäten</a>
+            </li>
+            <li>
+              <a href={`${import.meta.env.BASE_URL}chronik/bezirksmajestäten`}
+                >Bezirksmajestäten</a>
+            </li>
           </ul>
         </li>
 
         <!-- Galerie -->
         <li class="dropdown dropdown-hover relative dropdown-left">
-          <a href="/galerie" class="font-bold text-[16px]">Galerie</a>
+          <a
+            href={`${import.meta.env.BASE_URL}galerie`}
+            class="font-bold text-[16px]">Galerie</a
+          >
           <ul
             class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-0 z-50"
             style="top: 100%; right: 0; left: auto;"
           >
-            <li><a href="/schuetzenfest2025">Schützenfest 2025</a></li>
+            <li>
+              <a href={`${import.meta.env.BASE_URL}schuetzenfest2025`}
+                >Schützenfest 2025</a>
+            </li>
           </ul>
         </li>
       </ul>
