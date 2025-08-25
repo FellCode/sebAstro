@@ -21,7 +21,10 @@ try {
   imageFiles = [];
 }
 
-const images = imageFiles.map((file) => `/${folder}/${file}`);
+// URLs für GitHub Pages / Base-URL
+const images = imageFiles.map(
+  (file) => `${import.meta.env.BASE_URL}${folder}/${file}`
+);
 ---
 
 <section>
@@ -34,14 +37,14 @@ const images = imageFiles.map((file) => `/${folder}/${file}`);
           loading="lazy"
           role="button"
           tabindex="0"
-          class="w-full h-[300px] rounded-md object-cover cursor-pointer transition-transform hover:scale-105 border-2  "
+          class="w-full h-[300px] rounded-md object-cover cursor-pointer transition-transform hover:scale-105 border-2"
           onclick={`window.openImage(${i})`}
           onkeydown={`
             if(event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            window.openImage(${i});
+              event.preventDefault();
+              window.openImage(${i});
             }
-        `}
+          `}
         />
       ))
     }
