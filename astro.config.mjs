@@ -4,7 +4,7 @@ import icon from 'astro-icon';
 
 export default defineConfig({
   integrations: [tailwind(), icon()],
-  site: "https://FellCode.github.io/sebAstro",
-  outDir: "./dist",
-  base: "/sebAstro/"
+  site: "https://fellcode.github.io/sebAstro",
+  base: "/sebAstro/",
+  trailingSlash: "always"
 });
