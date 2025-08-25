@@ -9,7 +9,7 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
   >
     <div
       class="absolute inset-0 -z-10 bg-cover bg-[#1f7a1f]"
-      style="background-image: url(/assets/img/hero.webp)"
+      style={`background-image: url(${import.meta.env.BASE_URL}assets/img/hero.webp)`}
     >
     </div>
     <div class="mt-24">
