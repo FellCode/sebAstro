@@ -9,7 +9,7 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
   >
     <div
       class="absolute inset-0 -z-10 bg-cover bg-[#1f7a1f]"
-      style={`background-image: url(${import.meta.env.BASE_URL}assets/img/hero.webp)`}
+      style={`background-image: url(${import.meta.env.BASE_URL}assets/img/verein.jpg)`}
     >
     </div>
     <div class="mt-24">
@@ -31,37 +31,37 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
     <p class="max-w-[775px] px-5 leading-8 text-[#666]">
       Unser Verein besteht aus einer ganzen Reihe von Abteilungen, Diensten die
       wir anbieten und Veranstaltungen die wir entweder ausrichten oder
-      Besuchen. Möchtest du mehr darüber erfahren, wie unser Schießsport
+      besuchen. Möchtest du mehr darüber erfahren, wie unser Schießsport
       funktioniert, oder wie du unser Heim für eigene Veranstaltungen mieten
       kannst, dann bist du hier an der richtigen Stelle
     </p>
   </section>
-  <section class="flex flex-col items-center bg-[#83cea5] py-24 justify-center">
-    <div class="mt-4 space-y-8 w-full max-w-[900px] text-[#666]">
+  <section class="flex flex-col items-center bg-[#d4ffe7] py-24 justify-center">
+    <div class="mt-4 space-y-12 w-full max-w-[900px] text-[#666]">
       <div class="flex flex-row justify-between">
         <span class="text-3xl text-left">Der Schießsport</span>
-        <a class="btn btn-soft btn-success w-32" href="/majestaeten"
+        <a class="btn btn-soft btn-success w-32" href={`${import.meta.env.BASE_URL}schiesssport`}
           >Mehr Infos</a
         >
       </div>
 
       <div class="flex flex-row justify-between">
         <span class="text-3xl text-left">Die Jugend</span>
-        <a class="btn btn-soft btn-success w-32" href="/majestaeten"
+        <a class="btn btn-soft btn-success w-32" href={`${import.meta.env.BASE_URL}jugend`}
           >Mehr Infos</a
         >
       </div>
 
       <div class="flex flex-row justify-between">
         <span class="text-3xl">Der Vorstand</span>
-        <a class="btn btn-soft btn-success w-32" href="/majestaeten"
+        <a class="btn btn-soft btn-success w-32" href={`${import.meta.env.BASE_URL}vorstand`}
           >Mehr Infos</a
         >
       </div>
 
       <div class="flex flex-row justify-between">
         <span class="text-3xl">Vermietung</span>
-        <a class="btn btn-soft btn-success w-32" href="/majestaeten"
+        <a class="btn btn-soft btn-success w-32" href={`${import.meta.env.BASE_URL}vermietung`}
           >Mehr Infos</a
         >
       </div>
