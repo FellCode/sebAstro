@@ -1,0 +1,89 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ScrollIndicator from "../components/ScrollIndicator.astro";
+import Gallery from "../components/Gallery.astro";
+---
+
+<Layout>
+  <section
+    class="relative flex min-h-screen flex-col items-center justify-center text-center text-white"
+  >
+    <div
+      class="absolute inset-0 -z-10 bg-cover bg-[#1f7a1f]"
+      style={`background-image: url(${import.meta.env.BASE_URL}assets/img/hero.webp)`}
+    >
+    </div>
+    <div class="mt-24">
+      <h3 class="text-[28px] font-normal font-['Open_Sans'] mb-5 text-white">
+       Informationen zur
+      </h3>
+      <h1
+        class="text-[36px] sm:text-[60px] font-bold font-['Open_Sans'] mb-4 text-white"
+      >
+        Vermietung unseres Vereinsheims
+      </h1>
+    </div>
+    <ScrollIndicator />
+  </section>
+
+  <section
+    class="flex flex-col md:flex-row items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24"
+  >
+    <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
+      <img
+        src={`${import.meta.env.BASE_URL}assets/img/vorstand.webp`}
+        alt="Bild Schützenheim"
+        class="rounded-md shadow-lg max-h-[400px] object-cover"
+      />
+    </div>
+
+    <div class="w-full md:w-1/2 text-center md:text-left">
+      <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
+       Eckdaten
+      </h3>
+       <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+        Saal für ca. ? Personen <br/>
+        Thekenbereich für ca. ? Personen<br/>
+        Kühlhaus?<br/>
+        Küchenbereich<br/>
+        Toiletten<br/>
+        Heizanlage<br/>
+        Überdachter Außenbereich nach Absprache<br/>
+        Wiesenfläche nach Absprache<br/>
+        Mobiliar für ca. ? Personen (Tische und Polsterstühle).<br/>
+      </p>
+    </div>
+  </section>
+  <section
+    class="bg-[#83cea5]  px-6 sm:px-10 lg:px-20 py-40 items-center justify-center text"
+  >
+    <Gallery folder="assets/img/vermietung" />
+</section>
+<section
+    class="flex flex-col items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24 text-center"
+  >
+  <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
+       Hinweise zur Vermietung
+    </h3>
+    <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+        Preise<br>
+        Kaution<br>
+        Endreinigung<br>
+        etc. pp<br>
+    </p>
+</section>
+
+ <section
+    class="flex flex-col items-center bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 text-center"
+  >
+  <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
+       Du willst unser Heim mieten?
+    </h3>
+    <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+        Dann schreib uns einfach eine Mail an:       <a href="mailto:kontakt@seb-horrem.de" class="underline text-green-800"
+        >kontakt@seb-horrem.de</a
+      >
+    </p>
+</section>
+
+</Layout>
