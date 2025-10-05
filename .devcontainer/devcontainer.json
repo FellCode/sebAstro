@@ -1,15 +1,25 @@
 {
   "name": "Astro Dev",
-  "dockerComposeFile": ["../docker-compose.yml"],
-  "service": "astro",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": ".."
+  },
   "workspaceFolder": "/workspace",
   "forwardPorts": [4321],
-  "shutdownAction": "stopCompose",
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/sh"
+  "runArgs": [
+    "-v", "${localWorkspaceFolder}:/workspace:cached",
+    "-v", "/workspace/node_modules"
+  ],
+  "remoteEnv": {
+    "CHOKIDAR_USEPOLLING": "true"
   },
-  "extensions": [
-    "astro-build.astro-vscode",
-    "esbenp.prettier-vscode"
-  ]
+  "postStartCommand": "npm run dev:local",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "astro-build.astro-vscode",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
 }
