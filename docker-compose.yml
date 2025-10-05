@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  astro:
+    build: .
+    container_name: astro-dev
+    ports:
+      - "4321:4321"
+    volumes:
+      - ./:/workspace:cached
+      - /workspace/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true   # optional: stabilisiert Dateiwatches bei manchen mount-Setups
+    command: npm run dev:local
