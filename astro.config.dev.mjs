@@ -4,4 +4,8 @@ import icon from 'astro-icon';
 
 export default defineConfig({
   integrations: [tailwind(), icon()],
+  server: {
+    host: true,
+    port: 4321
+  }
 });

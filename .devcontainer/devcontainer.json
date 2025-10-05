@@ -1,0 +1,15 @@
+{
+  "name": "Astro Dev",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "astro",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [4321],
+  "shutdownAction": "stopCompose",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/sh"
+  },
+  "extensions": [
+    "astro-build.astro-vscode",
+    "esbenp.prettier-vscode"
+  ]
+}
