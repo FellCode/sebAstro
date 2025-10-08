@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout>
+  <section
+    class="relative flex min-h-[600px] flex-col items-center justify-center text-center text-white"
+  >
+    <div class="absolute inset-0 -z-10 bg-cover bg-[#83cea5]"></div>
+    <div class="mt-24">
+      <h1 class="text-[36px] sm:text-[60px] font-bold font-['Open_Sans'] mb-4 text-[#555]" ]>
+        Informationen & Downloads
+      </h1>
+      <h3 class="text-[28px] font-normal font-['Open_Sans'] mb-5 text-[#555] px-2">
+        Ihr möchtet Mitglied werden oder sucht Kontakt zum Vorstand?
+      </h3>
+    </div>
+  </section>
+
+  <section
+    class="bg-[#d4ffe7] text-lg flex flex-col px-6 sm:px-10 lg:px-20 py-24 text-left text-[#666] items-center"
+  >
+    <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666] text-center">
+      Mitglied werden
+    </h3>
+    <p class="text-left">
+      Du möchtest bei uns Mitglied werden? Den Mitgliedsantrag kannst du entweder bei reinschnuppern
+      direkt mitnehmen <br />oder <a href="">hier</a> direkt herunterladen.<br /><br />
+    </p>
+
+    <p class="pb-2"><strong>Unser Antrag unterscheidet zwischen:</strong></p>
+    <div>
+      1. Aktives Mitglied mit Uniform<br />
+      2. Inaktives Mitglied ohne Uniform
+    </div>
+    <br />
+    <p class="pb-2">
+      <strong>Unsere Beiträge sind viel folgt (jährlich):</strong><br />
+    </p>
+    <div class="grid grid-cols-[auto_auto] gap-x-4">
+      <div>Für Schüler:</div>
+      <div class="text-right">10,00 EUR</div>
+      <div>Für Jugend:</div>
+      <div class="text-right">XX,00 EUR</div>
+      <div>Für Erwachsene:</div>
+      <div class="text-right">60,00 EUR</div>
+    </div>
+
+    <br />
+    <p>
+      Den ausgefüllten Antrag könnt ihr einwerfen, vorbeibringen oder per Mail an
+      <a href="mailto:kontakt@seb-horrem.de" class="link link-primary"> kontakt@seb-horrem.de </a> senden.<br
+      /><br />
+      Achtet bitte darauf eure Angaben korrekt und gut lesbar einzutragen. Danke!
+    </p>
+  </section>
+
+  <section
+    class="bg-[#83cea5] text-lg flex flex-col px-6 sm:px-10 lg:px-20 py-24 text-left text-[#666] items-center"
+  >
+    <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666] text-center">
+      Für Mitglieder
+    </h3>
+    <p class="text-left max-w-[800px]">
+      Eure Kontaktdaten (Nachname, Postanschrift, E-Mailadresse, Telefonnummer) haben sich geändert?
+      Bitte informiert uns, damit wir Euch richtig adressieren und informieren können. Schreibt uns
+      eine Mail mit den anzupassenden Informationen an <a
+        href="mailto:kontakt@seb-horrem.de"
+        class="link link-primary"
+      >
+        kontakt@seb-horrem.de
+      </a>.<br /><br /> Danke für Eure Unterstützung!
+    </p>
+  </section>
+  <!-- TODO: Hier irgendwann noch eine Section mit weiteren Downlaods -->
+</Layout>
