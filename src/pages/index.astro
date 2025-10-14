@@ -1,6 +1,6 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import ScrollIndicator from "../components/ScrollIndicator.astro";
+import Layout from '../layouts/Layout.astro'
+import ScrollIndicator from '../components/ScrollIndicator.astro'
 ---
 
 <Layout>
@@ -13,21 +13,13 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
     >
     </div>
     <div class="mt-24">
-      <h3 class="text-[28px] font-normal font-['Open_Sans'] mb-5 text-white">
-        Willkommen bei der
-      </h3>
-      <h1
-        class="text-[36px] sm:text-[60px] font-bold font-['Open_Sans'] mb-4 text-white"
-      >
+      <h3 class="text-[28px] font-normal font-['Open_Sans'] mb-5 text-white">Willkommen bei der</h3>
+      <h1 class="text-[36px] sm:text-[60px] font-bold font-['Open_Sans'] mb-4 text-white">
         St. Sebastianus Schützenbruderschaft Horrem<br />
         seit 1550 e.V.
       </h1>
-      <button class="btn btn-soft btn-success"
-        ><a href="/where">Hier findest du uns</a></button
-      >
-      <button class="btn btn-soft btn-success"
-        ><a href="/socials">Socials</a></button
-      >
+      <button class="btn btn-soft btn-success"><a href="/where">Hier findest du uns</a></button>
+      <button class="btn btn-soft btn-success"><a href="/socials">Socials</a></button>
     </div>
     <ScrollIndicator />
   </section>
@@ -39,16 +31,15 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
       Herzlich Willkommen bei den St. Sebastianus Schützen
     </h3>
     <p class="max-w-[775px] px-5 leading-8 text-[#666]">
-      Wir freuen uns, dass du den Weg zu uns gefunden hast und für dein
-      Interesse an unserer Bruderschaft. Nachfolgend wollen wir dir einen
-      Überblick über unsere Bruderschaft, unserer tollen Gemeinschaft, unsere
-      Feste und Veranstaltungen sowie unserem Hobby, dem Schießsport geben.
-      <span
-        class="bigQuote block text-[1.5em] font-bold italic mt-6 text-[#666]"
+      Wir freuen uns, dass du den Weg zu uns gefunden hast und für dein Interesse an unserer
+      Bruderschaft. Nachfolgend wollen wir dir einen Überblick über unsere Bruderschaft, unserer
+      tollen Gemeinschaft, unsere Feste und Veranstaltungen sowie unserem Hobby, dem Schießsport
+      geben.
+      <span class="bigQuote block text-[1.5em] font-bold italic mt-6 text-[#666]"
         >„Für Glaube, Sitte und Heimat“</span
       ><br />
-      Nun aber erstmal genug der Geschichte und unserer Grundsätze. Wir wünschen
-      Dir viel Spaß beim Stöbern auf unserer digitalen Visitenkarte.<br />
+      Nun aber erstmal genug der Geschichte und unserer Grundsätze. Wir wünschen Dir viel Spaß beim Stöbern
+      auf unserer digitalen Visitenkarte.<br />
       Unser Kontakt:
       <a href="mailto:kontakt@seb-horrem.de" class="underline text-green-800"
         >kontakt@seb-horrem.de</a
@@ -56,9 +47,7 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
     </p>
   </section>
 
-  <section
-    class="flex flex-col items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24 text-center"
-  >
+  <section class="flex flex-col items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24 text-center">
     <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
       Anstehende Veranstaltungen
     </h3>
@@ -69,16 +58,11 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
     </ul>
   </section>
 
-  <section
-    class="flex flex-col md:flex-row bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 gap-10"
-  >
+  <section class="flex flex-col md:flex-row bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 gap-10">
     <div class="flex-1 flex flex-col items-center justify-center text-center">
-      <h2 class="text-[32px] font-bold font-['Open_Sans'] mb-4 text-[#666]">
-        Schützenfest 2025
-      </h2>
+      <h2 class="text-[32px] font-bold font-['Open_Sans'] mb-4 text-[#666]">Schützenfest 2025</h2>
       <p class="my-4 text-[#666]">
-        Vom 30.05 bis 01.06 haben wir unser Frühlingsfest und unser Schützenfest <br
-        />
+        Vom 30.05 bis 01.06 haben wir unser Frühlingsfest und unser Schützenfest <br />
         mit euch gefeiert.<br />
         Bilder dazu findet ihr in unserer Galerie
       </p>
@@ -86,16 +70,14 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
         <button class="btn btn-soft btn-success"
           ><a href="/schuetzenfest2025">Zu den Bildern</a></button
         >
-        <button class="btn btn-soft btn-success"
-          ><a href="/majestaeten">Neue Majestäten</a></button
-        >
+        <button class="btn btn-soft btn-success"><a href="/majestaeten">Neue Majestäten</a></button>
       </div>
     </div>
     <div class="flex-1 flex justify-center">
       <img
         alt="Plakat"
-        class="max-w-full rounded-lg"
-        src={`${import.meta.env.BASE_URL}assets/img/vorstand.webp`}
+        class="max-w-full rounded-lg border-2 border-[#d4ffe7]"
+        src={`${import.meta.env.BASE_URL}assets/img/schuetzenfest_2025/schuetzenfest_cover.jpeg`}
       />
     </div>
   </section>

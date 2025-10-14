@@ -25,7 +25,10 @@ import Layout from '../layouts/Layout.astro'
     </h3>
     <p class="text-left">
       Du möchtest bei uns Mitglied werden? Den Mitgliedsantrag kannst du entweder bei reinschnuppern
-      direkt mitnehmen <br />oder <a href="">hier</a> direkt herunterladen.<br /><br />
+      direkt mitnehmen <br />oder <a
+        class="underline"
+        href={`${import.meta.env.BASE_URL}assets/pdf/antrag.pdf`}>hier</a
+      > direkt herunterladen.<br /><br />
     </p>
 
     <p class="pb-2"><strong>Unser Antrag unterscheidet zwischen:</strong></p>
@@ -39,9 +42,9 @@ import Layout from '../layouts/Layout.astro'
     </p>
     <div class="grid grid-cols-[auto_auto] gap-x-4">
       <div>Für Schüler:</div>
-      <div class="text-right">10,00 EUR</div>
+      <div class="text-right">15,00 EUR</div>
       <div>Für Jugend:</div>
-      <div class="text-right">XX,00 EUR</div>
+      <div class="text-right">20,00 EUR</div>
       <div>Für Erwachsene:</div>
       <div class="text-right">60,00 EUR</div>
     </div>
@@ -49,8 +52,9 @@ import Layout from '../layouts/Layout.astro'
     <br />
     <p>
       Den ausgefüllten Antrag könnt ihr einwerfen, vorbeibringen oder per Mail an
-      <a href="mailto:kontakt@seb-horrem.de" class="link link-primary"> kontakt@seb-horrem.de </a> senden.<br
-      /><br />
+      <a href="mailto:kontakt@seb-horrem.de" class="underline text-green-800">
+        kontakt@seb-horrem.de
+      </a> senden.<br /><br />
       Achtet bitte darauf eure Angaben korrekt und gut lesbar einzutragen. Danke!
     </p>
   </section>
@@ -66,7 +70,7 @@ import Layout from '../layouts/Layout.astro'
       Bitte informiert uns, damit wir Euch richtig adressieren und informieren können. Schreibt uns
       eine Mail mit den anzupassenden Informationen an <a
         href="mailto:kontakt@seb-horrem.de"
-        class="link link-primary"
+        class="underline text-green-800"
       >
         kontakt@seb-horrem.de
       </a>.<br /><br /> Danke für Eure Unterstützung!

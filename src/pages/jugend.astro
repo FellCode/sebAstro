@@ -1,6 +1,6 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import ScrollIndicator from "../components/ScrollIndicator.astro";
+import Layout from '../layouts/Layout.astro'
+import ScrollIndicator from '../components/ScrollIndicator.astro'
 ---
 
 <Layout>
@@ -13,34 +13,34 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
     >
     </div>
     <div class="mt-24">
-      <h1
-        class="text-[36px] sm:text-[60px] font-bold font-['Open_Sans'] mb-4 text-white"
-      >
-       Unsere Schützenjugend 
+      <h1 class="text-[36px] sm:text-[60px] font-bold font-['Open_Sans'] mb-4 text-white">
+        Unsere Schützenjugend
       </h1>
     </div>
     <ScrollIndicator />
   </section>
 
-  <section
-    class="flex flex-col items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24 text-center"
-  >
+  <section class="flex flex-col items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24 text-center">
     <p class="max-w-[775px] px-5 leading-8 text-[#666]">
-        Wenn du dich für unseren Schützenverein interessierst und noch unter 24 bist, <br />
-        dann bist du ein perfekter Match für unsere Schützenjugend!<br/>
-        Offiziell unterteilen wir die Jugend nochmal wie folgt:<br/>
-        </p>
-        <ul class="text-[#666] text-left py-2 leading-8">
-            <li class="font-bold">Bambinis (Bis 12 Jahre)</li>
-            <li class="font-bold">Schüler (Bis 16 Jahre)</li>
-            <li class="font-bold">Jungschützen (Bis 24 Jahre)</li>
-        </ul>
-        
+      Wenn du dich für unseren Schützenverein interessierst und noch unter 24 bist, <br />
+      dann bist du ein perfekter Match für unsere Schützenjugend!<br />
+      Offiziell unterteilen wir die Jugend nochmal wie folgt:<br />
+    </p>
+    <ul class="text-[#666] text-left py-2 leading-8">
+      <li class="font-bold">Bambinis (Bis 12 Jahre)</li>
+      <li class="font-bold">Schüler (Bis 16 Jahre)</li>
+      <li class="font-bold">Jungschützen (Bis 24 Jahre)</li>
+    </ul>
+
     <p class="max-w-[775px] px-5 leading-8 text-[#666]">
-        Die Jugend genießt grundsätzlich alle Vorzüge die auch die regulären Schützen haben,<br>
-        bieten aber hier und da noch ein paar mehr Aktivitäten an als die "Alten" ;) <br>
-        Vertreten wird unsere Jugend durch unsere <strong>Jungschützenmeisterin </strong><em>Anne Vogel</em> und ihr <strong>Stellvertreter </strong><em>Felix Vogel</em>
-        Sie sind die offiziellen Vertreter der Jugend in unserem <a href="{`${import.meta.env.BASE_URL}vorstand`}">Vorstand</a>
+      Die Jugend genießt grundsätzlich alle Vorzüge die auch die regulären Schützen haben,<br />
+      bieten aber hier und da noch ein paar mehr Aktivitäten an als die "Alten" ;) <br />
+      Vertreten wird unsere Jugend durch unsere <strong>Jungschützenmeisterin </strong><em
+        >Anne Vogel</em
+      > und ihr <strong>Stellvertreter </strong><em>Felix Vogel</em>
+      Sie sind die offiziellen Vertreter der Jugend in unserem <a
+        href="{`${import.meta.env.BASE_URL}vorstand`}">Vorstand</a
+      >
     </p>
   </section>
 
@@ -51,34 +51,36 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
       <img
         src={`${import.meta.env.BASE_URL}assets/img/vorstand.webp`}
         alt="Die Jugend beim Training"
-        class="rounded-md shadow-lg max-h-[400px] object-cover"
+        class="rounded-md shadow-lg max-h-[400px] object-cover border-2 border-[#d4ffe7]"
       />
     </div>
 
     <div class="w-full md:w-1/2 text-center md:text-left">
-      <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
-        Unser Training
-      </h3>
+      <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">Unser Training</h3>
       <p class="max-w-[775px] px-5 leading-8 text-[#666]">
-       Beim Training bieten wir für alle Altersklassen das entsprechende Training an. <br>
-       Was heißt das jetzt genau? <br>
-       Unsere <strong>Bambinis</strong> können bis zu einem Alter von 12 Jahren an unserer Laseranlage trainieren<br> und schon dort wichtige Erfahrung sammeln.<br><br>
-       Die <strong>Schüler</strong> dürfen dann schon mit dem Luftgewehr trainieren und je nach Entwicklung und Interesse auch die Luftpistole verwenden <br><br>
-       Danach dürfen sie als <strong>Jungschützen</strong> auch den Umgang mit dem Kleinkaliber-Gewehr üben. <br><br>
-       Es ist aber auch vollkommen in Ordnung wenn man mal keine Lust hat zu schießen. Im Jugendraum kann man auch super quatschen, sich auskotzen, eine Runde Kicker spielen, oder nach Hilfe fragen, wenn es in der Schule mal nicht klappt. <br><br>
+        Beim Training bieten wir für alle Altersklassen das entsprechende Training an. <br />
+        Was heißt das jetzt genau? <br />
+        Unsere <strong>Bambinis</strong> können bis zu einem Alter von 12 Jahren an unserer Laseranlage
+        trainieren<br /> und schon dort wichtige Erfahrung sammeln.<br /><br />
+        Die <strong>Schüler</strong> dürfen dann schon mit dem Luftgewehr trainieren und je nach Entwicklung
+        und Interesse auch die Luftpistole verwenden <br /><br />
+        Danach dürfen sie als <strong>Jungschützen</strong> auch den Umgang mit dem Kleinkaliber-Gewehr
+        üben. <br /><br />
+        Es ist aber auch vollkommen in Ordnung wenn man mal keine Lust hat zu schießen. Im Jugendraum
+        kann man auch super quatschen, sich auskotzen, eine Runde Kicker spielen, oder nach Hilfe fragen,
+        wenn es in der Schule mal nicht klappt. <br /><br />
 
-       Unser Jugendtraining findet <strong>Freitags</strong> <em>18:00Uhr-19:00Uhr</em> statt.
-     </p><br />
+        Unser Jugendtraining findet <strong>Freitags</strong>
+        <em>18:00Uhr-19:00Uhr</em> statt.
+      </p><br />
     </div>
   </section>
-  <section
-    class="flex flex-col md:flex-row items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24"
-  >
+  <section class="flex flex-col md:flex-row items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24">
     <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
       <img
         src={`${import.meta.env.BASE_URL}assets/img/vorstand.webp`}
         alt="Kleinkaliber"
-        class="rounded-md shadow-lg max-h-[400px] object-cover"
+        class="rounded-md shadow-lg max-h-[400px] object-cover border-2 border-[#83cea5]"
       />
     </div>
 
@@ -87,32 +89,32 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
         Was treiben wir sonst noch?
       </h3>
       <p class="max-w-[775px] px-5 leading-8 text-[#666]">
-        Der klassische Schützenzug bei unseren eigenen Schützenfest sowie den auswärtigen Vereinen ist auch ein wichtiger Bestandteil der Jugend<br>
-        Das inkludiert auch Ausflügen zu größeren Festen wie dem Bundesschützenfest <br><br>
-        Schützenfest bedeutet auch das du als Schüler und Jungschütze auf die Prinzenwürde schießen darfst und uns ein Jahr als Majestät zu repräsentieren <br><br>
-        Richten wir Veranstaltung aus ist die Jugend immer gefragt fleißig mit anzupacken und auch Verantwortung zu übernehmen.<br> Planen, mitdenken, improvisieren, sich einbringen. All diese Dinge werden bei uns gefördert :)<br><br>
-        Abseits davon planen wir auch den ein oder anderen Ausflug, oder machen Spieleabend,die auch leckeres Essen und Snacks involvieren.
+        Der klassische Schützenzug bei unseren eigenen Schützenfest sowie den auswärtigen Vereinen
+        ist auch ein wichtiger Bestandteil der Jugend<br />
+        Das inkludiert auch Ausflügen zu größeren Festen wie dem Bundesschützenfest <br /><br />
+        Schützenfest bedeutet auch das du als Schüler und Jungschütze auf die Prinzenwürde schießen darfst
+        und uns ein Jahr als Majestät zu repräsentieren <br /><br />
+        Richten wir Veranstaltung aus ist die Jugend immer gefragt fleißig mit anzupacken und auch Verantwortung
+        zu übernehmen.<br /> Planen, mitdenken, improvisieren, sich einbringen. All diese Dinge werden
+        bei uns gefördert :)<br /><br />
+        Abseits davon planen wir auch den ein oder anderen Ausflug, oder machen Spieleabend,die auch
+        leckeres Essen und Snacks involvieren.
       </p>
     </div>
   </section>
-  <section
-    class="flex flex-col items-center bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 text-center"
-  >
-    <h3 class="mb-4 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
-      Weitere Fragen?
-    </h3>
+  <section class="flex flex-col items-center bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 text-center">
+    <h3 class="mb-4 text-[32px] font-bold font-['Open_Sans'] text-[#666]">Weitere Fragen?</h3>
     <p class="max-w-[775px] px-5 leading-8 text-[#666] mt-2">
-      Wenn du noch weitere Fragen zur Jugend hast, oder mal zum Training
-      vorbeikommen möchtest, kannst du eine kurze Nachricht an folgende Mails
-      schicken:<br />
+      Wenn du noch weitere Fragen zur Jugend hast, oder mal zum Training vorbeikommen möchtest,
+      kannst du eine kurze Nachricht an folgende Mails schicken:<br />
 
       <strong>Allgemeine Kontaktadresse:</strong>
-      <a href="mailto:kontakt@seb-horrem.de" class="link link-primary">
+      <a href="mailto:kontakt@seb-horrem.de" class="underline text-green-800">
         kontakt@seb-horrem.de
       </a>
       <br />
       <strong>Oder direkt an die Jungschützenmeisterin:</strong>
-      <a href="mailto:jugend@seb-horrem.de" class="link link-primary">
+      <a href="mailto:jugend@seb-horrem.de" class="underline text-green-800">
         jugend@seb-horrem.de
       </a>
     </p>
