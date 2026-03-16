@@ -1,10 +1,8 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
 import HeroBanner from "../components/HeroBanner.astro";
 import heroImage from "../assets/images/hero.webp";
-import vorstandImage from "../assets/images/vorstand.webp";
 ---
 
 <Layout
@@ -88,13 +86,10 @@ import vorstandImage from "../assets/images/vorstand.webp";
       </div>
     </div>
     <div class="flex-1 flex justify-center">
-      <Image
-        src={vorstandImage}
+      <img
+        src={`${import.meta.env.BASE_URL}assets/img/schuetzenfest_2025/schuetzenfest_cover.jpeg`}
         alt="Gruppenfoto Vorstand"
         class="max-w-full rounded-lg"
-        formats={["avif", "webp"]}
-        widths={[480, 768, 1200]}
-        sizes="(min-width: 1024px) 50vw, 100vw"
         loading="lazy"
         decoding="async"
       />
