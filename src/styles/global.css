@@ -76,8 +76,38 @@ html {
 	scroll-behavior: smooth;
 }
 
-/* Tastatur-Fokus klar sichtbar halten */
-:focus-visible {
+@layer components {
+  .section-shell {
+    @apply px-6 py-24 sm:px-10 lg:px-20;
+  }
+
+  .section-mint {
+    @apply bg-brand text-text-muted;
+  }
+
+  .section-light {
+    @apply bg-surface text-text-muted;
+  }
+
+  .page-title {
+    @apply mb-4 text-[36px] font-bold sm:text-[60px];
+  }
+
+  .page-subtitle {
+    @apply mb-5 text-[28px] font-normal;
+  }
+
+  .section-title {
+    @apply mb-8 text-[32px] font-bold text-text-muted;
+  }
+
+  .body-copy {
+    @apply max-w-[775px] px-5 leading-8 text-text-muted;
+  }
+}
+
+ /* Tastatur-Fokus klar sichtbar halten */
+ :focus-visible {
   outline: 3px solid #0f5132;
   outline-offset: 2px;
 }

@@ -5,7 +5,14 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        brand: "#83cea5",
+        surface: "#d4ffe7",
+        "text-heading": "#555",
+        "text-muted": "#666",
+      },
       fontFamily: {
+        sans: ['"Open Sans"', "sans-serif"],
         Open_Sans: ['"Open Sans"', 'sans-serif'],
       },
     },

@@ -15,21 +15,17 @@ import heroImage from "../assets/images/hero.webp";
   >
     <HeroBanner image={heroImage} alt="Hero-Bild Vermietung" />
     <div class="mt-24">
-      <h3 class="text-[28px] font-normal font-['Open_Sans'] mb-5 text-white">
-       Informationen zur
+      <h3 class="page-subtitle text-white">
+        Informationen zur
       </h3>
-      <h1
-        class="text-[36px] sm:text-[60px] font-bold font-['Open_Sans'] mb-4 text-white"
-      >
+      <h1 class="page-title text-white">
         Vermietung unseres Vereinsheims
       </h1>
     </div>
     <ScrollIndicator />
   </section>
 
-  <section
-    class="flex flex-col md:flex-row items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24"
-  >
+  <section class="section-shell section-light flex flex-col items-center md:flex-row">
     <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
       <img
         src={`${import.meta.env.BASE_URL}assets/img/vorstand.webp`}
@@ -39,10 +35,10 @@ import heroImage from "../assets/images/hero.webp";
     </div>
 
     <div class="w-full md:w-1/2 text-center md:text-left">
-      <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
-       Eckdaten
+      <h3 class="section-title">
+        Eckdaten
       </h3>
-       <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+      <p class="body-copy">
         Saal für ca. ? Personen <br/>
         Thekenbereich für ca. ? Personen<br/>
         Kühlhaus?<br/>
@@ -55,32 +51,26 @@ import heroImage from "../assets/images/hero.webp";
       </p>
     </div>
   </section>
-  <section
-    class="bg-[#83cea5]  px-6 sm:px-10 lg:px-20 py-40 items-center justify-center text"
-  >
+  <section class="section-shell section-mint items-center justify-center py-40 text">
     <Gallery folder="assets/img/vermietung" />
-</section>
-<section
-    class="flex flex-col items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24 text-center"
-  >
-  <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
-       Hinweise zur Vermietung
-    </h3>
-    <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+  </section>
+  <section class="section-shell section-light flex flex-col items-center text-center">
+    <h3 class="section-title">
+        Hinweise zur Vermietung
+     </h3>
+    <p class="body-copy">
         Preise<br>
         Kaution<br>
         Endreinigung<br>
         etc. pp<br>
     </p>
-</section>
+  </section>
 
- <section
-    class="flex flex-col items-center bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 text-center"
-  >
-  <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
-       Du willst unser Heim mieten?
-    </h3>
-    <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+ <section class="section-shell section-mint flex flex-col items-center text-center">
+  <h3 class="section-title">
+        Du willst unser Heim mieten?
+     </h3>
+    <p class="body-copy">
         Dann schreib uns einfach eine Mail an:       <a href="mailto:kontakt@seb-horrem.de" class="underline text-green-800"
         >kontakt@seb-horrem.de</a
       >

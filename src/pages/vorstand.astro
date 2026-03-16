@@ -17,18 +17,14 @@ import vorstandCardImage from "../assets/images/vorstand.webp";
   >
     <HeroBanner image={heroImage} alt="Vorstand der Schützenbruderschaft" />
     <div class="mt-24">
-      <h1
-        class="text-[36px] sm:text-[60px] font-bold font-['Open_Sans'] mb-4 text-white"
-      >
+      <h1 class="page-title text-white">
         Unser Geschäftsführender Vorstand
       </h1>
     </div>
     <ScrollIndicator />
   </section>
 
-  <section
-    class="flex flex-col items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24 text-center"
-  >
+  <section class="section-shell section-light flex flex-col items-center text-center">
     <Image
       src={vorstandGroupImage}
       class="max-w-[600px] mb-2 border-2 rounded-sm mx-auto w-full"
@@ -39,7 +35,7 @@ import vorstandCardImage from "../assets/images/vorstand.webp";
       loading="lazy"
       decoding="async"
     />
-    <p class="text-[#666]">
+    <p class="text-text-muted">
       Unser Geschäftsführender Vorstand von Links nach Rechts:<br />
       <strong> Brudermeister</strong><em> Christian Kurm</em><br />
       <strong>Stellv. Brudermeisterin</strong><em> Angelika Dahmen</em><br />
@@ -48,9 +44,7 @@ import vorstandCardImage from "../assets/images/vorstand.webp";
     </p>
   </section>
 
-  <section
-    class="bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 items-center justify-center"
-  >
+  <section class="section-shell section-mint items-center justify-center">
     <div class="max-w-5xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Card 1 -->

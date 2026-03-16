@@ -14,24 +14,20 @@ import qrTiktok from "../assets/images/qr-tiktok.png";
   <section
     class="relative flex min-h-screen flex-col items-center justify-center text-center text-white"
   >
-    <div class="absolute inset-0 -z-10 bg-cover bg-[#83cea5]"></div>
+    <div class="absolute inset-0 -z-10 bg-cover bg-brand"></div>
     <div class="mt-24">
-      <h1
-        class="text-[36px] sm:text-[60px] font-bold font-['Open_Sans'] mb-4 text-[#555]"
-      >
+      <h1 class="page-title text-text-heading">
         Unsere Social Media Kanäle
       </h1>
-      <h2 class="text-[28px] font-normal font-['Open_Sans'] mb-5 text-[#555]">
+      <h2 class="page-subtitle text-text-heading">
         Auf folgenden Social-Media-Kanälen könnt ihr uns folgen und abonnieren.
       </h2>
     </div>
     <ScrollIndicator />
   </section>
-  <section
-    class="bg-[#d4ffe7] flex flex-col items-center px-6 sm:px-10 lg:px-20 py-24 text-center text-[#666]"
-  >
+  <section class="section-shell section-light flex flex-col items-center text-center">
     <div class="flex flex-col lg:flex-row justify-around m-8 gap-12">
-      <div class="card bg-[#83cea5] shadow-sm">
+      <div class="card bg-brand shadow-sm">
         <figure class="p-8">
           <Image
             src={qrInstagram}
@@ -63,7 +59,7 @@ import qrTiktok from "../assets/images/qr-tiktok.png";
         </div>
       </div>
 
-      <div class="card bg-[#83cea5] shadow-sm">
+      <div class="card bg-brand shadow-sm">
         <figure class="p-8">
           <Image
             src={qrFacebook}
@@ -95,7 +91,7 @@ import qrTiktok from "../assets/images/qr-tiktok.png";
         </div>
       </div>
 
-      <div class="card bg-[#83cea5] shadow-sm">
+      <div class="card bg-brand shadow-sm">
         <figure class="p-8">
           <Image
             src={qrTiktok}

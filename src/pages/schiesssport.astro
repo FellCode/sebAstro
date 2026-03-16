@@ -16,19 +16,15 @@ import vorstandImage from "../assets/images/vorstand.webp";
   >
     <HeroBanner image={heroImage} alt="Hero-Bild Schießsport" />
     <div class="mt-24">
-      <h1
-        class="text-[36px] sm:text-[60px] font-bold font-['Open_Sans'] mb-4 text-white"
-      >
+      <h1 class="page-title text-white">
         Schießsport bei uns
       </h1>
     </div>
     <ScrollIndicator />
   </section>
 
-  <section
-    class="flex flex-col items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24 text-center"
-  >
-    <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+  <section class="section-shell section-light flex flex-col items-center text-center">
+    <p class="body-copy">
       Die Schützenbruderschaft bietet die Möglichkeit zum sportlichen Schießen.
       Wir können Luftgewehr, Luftpistole, Kleinkalibergewehr sowie KK bzw.
       Sportpistole als Disziplinen anbieten.<br />
@@ -40,9 +36,7 @@ import vorstandImage from "../assets/images/vorstand.webp";
     </p>
   </section>
 
-  <section
-    class="flex flex-col md:flex-row-reverse items-center bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24"
-  >
+  <section class="section-shell section-mint flex flex-col items-center md:flex-row-reverse">
     <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
       <Image
         src={vorstandImage}
@@ -56,15 +50,15 @@ import vorstandImage from "../assets/images/vorstand.webp";
     </div>
 
     <div class="w-full md:w-1/2 text-center md:text-left">
-      <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
+      <h3 class="section-title">
         Luftgewehr und Luftpistole
       </h3>
-      <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+      <p class="body-copy">
         Auf 10 Bahnen bieten mit einer Auswahl von Vereinsgewehren
         Trainingsmöglichkeiten für Luftgewehr und Luftpistole an. Es ist
         natürlich auch möglich mit den eigenen Gewehren zu trainieren.
       </p><br />
-      <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+      <p class="body-copy">
         Für das Luftgewehr haben wir aktuell eine Mannschaft die den Verein im
         Bereich des RSB vertreten. Bei der Luftpistole stellen wir ebenfalls
         eine Mannschaft, allerdings nur für Wettkämpfe innerhalb des Bezirks.<br
@@ -75,9 +69,7 @@ import vorstandImage from "../assets/images/vorstand.webp";
     </div>
   </section>
 
-  <section
-    class="flex flex-col md:flex-row items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24"
-  >
+  <section class="section-shell section-light flex flex-col items-center md:flex-row">
     <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
       <Image
         src={vorstandImage}
@@ -91,10 +83,10 @@ import vorstandImage from "../assets/images/vorstand.webp";
     </div>
 
     <div class="w-full md:w-1/2 text-center md:text-left">
-      <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
+      <h3 class="section-title">
         Kleinkaliber
       </h3>
-      <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+      <p class="body-copy">
         Hier bieten wir auf 4 Bahnen Trainingsmöglichkeiten an und können auch
         eine begrenzte Auswahl an Gewehren für das Training bereitstellen.<br
         /><br />
@@ -106,9 +98,7 @@ import vorstandImage from "../assets/images/vorstand.webp";
     </div>
   </section>
 
-  <section
-    class="flex flex-col md:flex-row-reverse items-center bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24"
-  >
+  <section class="section-shell section-mint flex flex-col items-center md:flex-row-reverse">
     <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
       <Image
         src={vorstandImage}
@@ -122,10 +112,10 @@ import vorstandImage from "../assets/images/vorstand.webp";
     </div>
 
     <div class="w-full md:w-1/2 text-center md:text-left">
-      <h3 class="mb-8 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
+      <h3 class="section-title">
         KK-Sportpistole
       </h3>
-      <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+      <p class="body-copy">
         Wir bieten ebenfalls Training mit KK-Sportpistolen an. Aufgrund geringer
         Nachfrage findet dieses Training aber nur nach Rücksprache ab.<br />
         Mannschaften für Wettkämpfe bietet wir hier bisher nicht an.<br />
@@ -135,18 +125,16 @@ import vorstandImage from "../assets/images/vorstand.webp";
     </div>
   </section>
 
-  <section
-    class="flex flex-col items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24 text-center"
-  >
-    <h3 class="mb-4 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
+  <section class="section-shell section-light flex flex-col items-center text-center">
+    <h3 class="mb-4 text-[32px] font-bold text-text-muted">
       Trainingszeiten
     </h3>
 
-    <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+    <p class="body-copy">
       Wir bieten folgende Trainingszeiten an:
     </p>
 
-    <div class="my-8 space-y-4 text-[#666] text-left">
+    <div class="my-8 space-y-4 text-left text-text-muted">
       <div class="grid grid-cols-2 gap-x-40">
         <span class="font-semibold">KK-Sportpistole:</span>
         <span class="text-right">Nach Absprache Montags 17:00 - 18:00 Uhr</span>
@@ -161,7 +149,7 @@ import vorstandImage from "../assets/images/vorstand.webp";
       </div>
     </div>
 
-    <p class="max-w-[775px] px-5 leading-8 text-[#666] mt-2 text-left">
+    <p class="body-copy mt-2 text-left">
       <strong>Hinweis: </strong>Informationen für das Schießtraining der Kinder und
       Jugendlichen findet ihr auf unserer
       <a href={`${import.meta.env.BASE_URL}jugend/`}> Schützenjugend-Seite</a>.
@@ -171,13 +159,11 @@ import vorstandImage from "../assets/images/vorstand.webp";
     </a>
   </section>
 
-  <section
-    class="flex flex-col items-center bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 text-center"
-  >
-    <h3 class="mb-4 text-[32px] font-bold font-['Open_Sans'] text-[#666]">
+  <section class="section-shell section-mint flex flex-col items-center text-center">
+    <h3 class="mb-4 text-[32px] font-bold text-text-muted">
       Weitere Fragen?
     </h3>
-    <p class="max-w-[775px] px-5 leading-8 text-[#666] mt-2">
+    <p class="body-copy mt-2">
       Wenn du noch weitere Fragen zum Schießsport hast, oder mal zum Training
       vorbeikommen möchtest, kannst du eine kurze Nachricht an folgende Mails
       schicken:<br />

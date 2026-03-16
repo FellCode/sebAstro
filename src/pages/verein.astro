@@ -14,22 +14,18 @@ import vereinImage from "../assets/images/verein.jpg";
   >
     <HeroBanner image={vereinImage} alt="Vereinsheim der Schützenbruderschaft" />
     <div class="mt-24">
-      <h3 class="text-[28px] font-normal font-['Open_Sans'] mb-5 text-white">
+      <h3 class="page-subtitle text-white">
         Das ist die
       </h3>
-      <h1
-        class="text-[36px] sm:text-[60px] font-bold font-['Open_Sans'] mb-4 text-white"
-      >
+      <h1 class="page-title text-white">
         St. Sebastianus Schützenbruderschaft Horrem<br />
         seit 1550 e.V.
       </h1>
     </div>
     <ScrollIndicator />
   </section>
-  <section
-    class="flex flex-col items-center bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 text-center"
-  >
-    <p class="max-w-[775px] px-5 leading-8 text-[#666]">
+  <section class="section-shell section-mint flex flex-col items-center text-center">
+    <p class="body-copy">
       Unser Verein besteht aus einer ganzen Reihe von Abteilungen, Diensten die
       wir anbieten und Veranstaltungen die wir entweder ausrichten oder
       besuchen. Möchtest du mehr darüber erfahren, wie unser Schießsport
@@ -37,8 +33,8 @@ import vereinImage from "../assets/images/verein.jpg";
       kannst, dann bist du hier an der richtigen Stelle
     </p>
   </section>
-  <section class="flex flex-col items-center bg-[#d4ffe7] py-24 justify-center">
-    <div class="mt-4 space-y-12 w-full max-w-[900px] text-[#666]">
+  <section class="section-shell section-light flex flex-col items-center justify-center">
+    <div class="mt-4 w-full max-w-[900px] space-y-12 text-text-muted">
       <div class="flex flex-row justify-between">
         <span class="text-3xl text-left">Der Schießsport</span>
         <a class="btn btn-soft btn-success w-32" href={`${import.meta.env.BASE_URL}schiesssport`}

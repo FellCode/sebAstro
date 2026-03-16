@@ -17,9 +17,7 @@ import bezirksprinzImage from "../assets/images/bezirksprinz.jpeg";
   >
     <HeroBanner image={heroImage} alt="Hero-Bild der Majestäten" />
     <div class="mt-24">
-      <h1
-        class="text-[36px] sm:text-[60px] font-bold font-['Open_Sans'] mb-4 text-white"
-      >
+      <h1 class="page-title text-white">
         Amtierende Majestäten der St. Sebastianus Schützenbruderschaft Horrem<br
         />
         seit 1550 e.V.
@@ -27,9 +25,7 @@ import bezirksprinzImage from "../assets/images/bezirksprinz.jpeg";
     </div>
     <ScrollIndicator />
   </section>
-  <section
-    class="flex flex-col items-center bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 text-center"
-  >
+  <section class="section-shell section-mint flex flex-col items-center text-center">
     <Image
       src={majestaetenImage}
       class="max-w-[800px] mb-2 border-2 rounded-sm mx-auto w-full"
@@ -39,7 +35,7 @@ import bezirksprinzImage from "../assets/images/bezirksprinz.jpeg";
       loading="lazy"
       decoding="async"
     />
-    <p class="text-[#666]">
+    <p class="text-text-muted">
       Von Links nach Rechts:<br />
       <strong> Bürgerkönigin</strong><em> Barbara</em><br />
       <strong>Schützenkönig</strong>
@@ -50,11 +46,9 @@ import bezirksprinzImage from "../assets/images/bezirksprinz.jpeg";
   </section>
 
 
-    <section
-    class="flex flex-col items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24 text-center"
-  >
+    <section class="section-shell section-light flex flex-col items-center text-center">
 
-  <h3 class="text-[28px] font-normal font-['Open_Sans'] mb-2 text-[#666]">
+  <h3 class="mb-2 text-[28px] font-normal text-text-muted">
         Bezirksschülerprinz
       </h3>
     <Image
@@ -66,7 +60,7 @@ import bezirksprinzImage from "../assets/images/bezirksprinz.jpeg";
       loading="lazy"
       decoding="async"
     />
-    <p class="text-[#666]">
+    <p class="text-text-muted">
       Jannis Callsen
     </p>
   </section>
