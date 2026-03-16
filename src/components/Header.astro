@@ -1,181 +1,133 @@
+---
+import { Image } from "astro:assets";
+import wappen from "../assets/images/wappen.png";
+---
+
 <header class="sticky top-0 z-50 bg-base-100 shadow-md">
   <div class="navbar flex flex-wrap justify-between lg:justify-start">
-    <!-- Logo -->
     <div class="flex-1 flex justify-center lg:justify-start lg:items-center">
-      <div role="button" class="btn-circle w-10 sm:w-12">
-        <a href={`${import.meta.env.BASE_URL}`}>
-          <img
-            alt="Wappen der St. Sebastianus Horrem Schützenbruderschaft"
-            src={`${import.meta.env.BASE_URL}assets/img/wappen.png`}
-            class="rounded-full"
-          />
-        </a>
-      </div>
+      <a
+        class="btn-circle w-10 sm:w-12"
+        href={`${import.meta.env.BASE_URL}`}
+        aria-label="Zur Startseite"
+      >
+        <Image
+          src={wappen}
+          alt="Wappen der St. Sebastianus Horrem Schützenbruderschaft"
+          class="rounded-full"
+          widths={[64, 96, 128]}
+          sizes="(min-width: 640px) 48px, 40px"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </a>
     </div>
 
-    <!-- Desktop Menu -->
-    <div class="flex-none hidden lg:flex">
+    <nav class="flex-none hidden lg:flex" aria-label="Hauptnavigation">
       <ul class="menu menu-horizontal px-2">
         <li class="dropdown dropdown-hover relative">
           <a href={`${import.meta.env.BASE_URL}`} class="font-bold text-[16px]">Home</a>
           <ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-0 z-50">
-            <li>
-              <a href={`${import.meta.env.BASE_URL}where`}>Wo findet ihr uns</a>
-            </li>
-            <li><a href={`${import.meta.env.BASE_URL}socials`}>Socials</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown dropdown-hover relative">
-          <a class="font-bold text-[16px]">Aktuelles</a>
-          <ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-0 z-50">
-            <li>
-              <a href={`${import.meta.env.BASE_URL}majestaeten`}>Amtierende Majestäten</a>
-            </li>
-          </ul>
-        </li>
-
-        <li class="dropdown dropdown-hover relative">
-          <a href={`${import.meta.env.BASE_URL}verein`} class="font-bold text-[16px]">Der Verein</a>
-          <ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-0 z-50">
-            <li>
-              <a href={`${import.meta.env.BASE_URL}vorstand`}>Vorstand</a>
-            </li>
-            <li>
-              <a href={`${import.meta.env.BASE_URL}schiesssport`}>Schießsport</a>
-            </li>
-            <li>
-              <a href={`${import.meta.env.BASE_URL}jugend`}>Schützenjugend</a>
-            </li>
-            <li>
-              <a href={`${import.meta.env.BASE_URL}vermietung`}>Heim + Vermietung</a>
-            </li>
+            <li><a href={`${import.meta.env.BASE_URL}where/`}>Wo findet ihr uns</a></li>
+            <li><a href={`${import.meta.env.BASE_URL}socials/`}>Socials</a></li>
           </ul>
         </li>
 
         <li>
-          <a href={`${import.meta.env.BASE_URL}infos`} class="font-bold text-[16px]">Infos</a>
+          <a href={`${import.meta.env.BASE_URL}majestaeten/`} class="font-bold text-[16px]">Aktuelles</a>
         </li>
 
-        <!--<li class="dropdown dropdown-hover relative">
-          <a
-            href={`${import.meta.env.BASE_URL}chronik`}
-            class="font-bold text-[16px]">Chronik</a
-          >
-          <ul
-            class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-0 z-50"
-          >
+        <li class="dropdown dropdown-hover relative">
+          <a href={`${import.meta.env.BASE_URL}verein/`} class="font-bold text-[16px]">Der Verein</a>
+          <ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-0 z-50">
+            <li><a href={`${import.meta.env.BASE_URL}vorstand/`}>Vorstand</a></li>
+            <li><a href={`${import.meta.env.BASE_URL}schiesssport/`}>Schießsport</a></li>
+            <li><a href={`${import.meta.env.BASE_URL}jugend/`}>Schützenjugend</a></li>
+            <li><a href={`${import.meta.env.BASE_URL}vermietung/`}>Heim + Vermietung</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href={`${import.meta.env.BASE_URL}infos/`} class="font-bold text-[16px]">Infos</a>
+        </li>
+
+        <li class="dropdown dropdown-hover relative">
+          <a href={`${import.meta.env.BASE_URL}chroniken_majestaeten/`} class="font-bold text-[16px]">Chronik</a>
+          <ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-0 z-50">
+            <li><a href={`${import.meta.env.BASE_URL}chroniken_majestaeten/`}>Majestäten</a></li>
             <li>
-              <a href={`${import.meta.env.BASE_URL}chronik/majestaeten`}
-                >Majestäten</a
-              >
-            </li>
-            <li>
-              <a href={`${import.meta.env.BASE_URL}chronik/bezirksmajestäten`}
-                >Bezirksmajestäten</a
-              >
+              <a href={`${import.meta.env.BASE_URL}chroniken_bezirksmajestaeten/`}>Bezirksmajestäten</a>
             </li>
           </ul>
-        </li> -->
+        </li>
 
         <li class="dropdown dropdown-hover relative dropdown-left">
-          <a class="font-bold text-[16px]">Galerie</a>
+          <a href={`${import.meta.env.BASE_URL}galerie/`} class="font-bold text-[16px]">Galerie</a>
           <ul
             class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-0 z-50"
             style="top: 100%; right: 0; left: auto;"
           >
-            <li>
-              <a href={`${import.meta.env.BASE_URL}schuetzenfest2025`}>Schützenfest 2025</a>
-            </li>
-            <li>
-              <a href={`${import.meta.env.BASE_URL}jugend_galerie`}>Jugend</a>
-            </li>
+            <li><a href={`${import.meta.env.BASE_URL}schuetzenfest2025/`}>Schützenfest 2025</a></li>
           </ul>
         </li>
       </ul>
-    </div>
+    </nav>
 
     <!-- Mobile Hamburger Menu -->
     <div class="flex-none lg:hidden">
       <div class="dropdown dropdown-end">
-        <label tabindex="0" class="btn btn-square btn-ghost">
+        <label tabindex="0" class="btn btn-square btn-ghost" aria-label="Menü öffnen">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-6 w-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            aria-hidden="true"
           >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
           </svg>
         </label>
         <ul
           tabindex="0"
           class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
         >
-          <li tabindex="0">
+          <li>
             <a href={`${import.meta.env.BASE_URL}`}>Home</a>
             <ul class="p-2">
+              <li><a href={`${import.meta.env.BASE_URL}where/`}>Wo findet ihr uns</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}socials/`}>Socials</a></li>
+            </ul>
+          </li>
+          <li><a href={`${import.meta.env.BASE_URL}majestaeten/`}>Aktuelles</a></li>
+          <li>
+            <a href={`${import.meta.env.BASE_URL}verein/`} class="justify-between">Der Verein</a>
+            <ul class="p-2">
+              <li><a href={`${import.meta.env.BASE_URL}vorstand/`}>Vorstand</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}schiesssport/`}>Schießsport</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}jugend/`}>Schützenjugend</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}vermietung/`}>Heim + Vermietung</a></li>
+            </ul>
+          </li>
+          <li><a href={`${import.meta.env.BASE_URL}infos/`}>Infos</a></li>
+          <li>
+            <a href={`${import.meta.env.BASE_URL}chroniken_majestaeten/`} class="justify-between">Chronik</a>
+            <ul class="p-2">
+              <li><a href={`${import.meta.env.BASE_URL}chroniken_majestaeten/`}>Majestäten</a></li>
               <li>
-                <a href={`${import.meta.env.BASE_URL}where`}>Wo findet ihr uns</a>
-              </li>
-              <li>
-                <a href={`${import.meta.env.BASE_URL}socials`}>Socials</a>
+                <a href={`${import.meta.env.BASE_URL}chroniken_bezirksmajestaeten/`}>Bezirksmajestäten</a>
               </li>
             </ul>
           </li>
-          <li tabindex="0">
-            <a class="justify-between">Aktuelles</a>
+          <li>
+            <a href={`${import.meta.env.BASE_URL}galerie/`} class="justify-between">Galerie</a>
             <ul class="p-2">
-              <li>
-                <a href={`${import.meta.env.BASE_URL}majestaeten`}>Amtierende Majestäten</a>
-              </li>
-            </ul>
-          </li>
-          <li tabindex="0">
-            <a href={`${import.meta.env.BASE_URL}verein`} class="justify-between">Der Verein</a>
-            <ul class="p-2">
-              <li>
-                <a href={`${import.meta.env.BASE_URL}vorstand`}>Vorstand</a>
-              </li>
-              <li>
-                <a href={`${import.meta.env.BASE_URL}schiesssport`}>Schießsport</a>
-              </li>
-              <li>
-                <a href={`${import.meta.env.BASE_URL}jugend`}>Schützenjugend</a>
-              </li>
-              <li>
-                <a href={`${import.meta.env.BASE_URL}vermietung`}>Heim + Vermietung</a>
-              </li>
-            </ul>
-          </li>
-          <li><a href={`${import.meta.env.BASE_URL}infos`}>Infos</a></li>
-          <!--<li tabindex="0">
-            <a class="justify-between">Chronik</a>
-            <ul class="p-2">
-              <li>
-                <a href={`${import.meta.env.BASE_URL}chronik/majestaeten`}>Majestäten</a>
-              </li>
-              <li>
-                <a href={`${import.meta.env.BASE_URL}chronik/bezirksmajestäten`}
-                  >Bezirksmajestäten</a
-                >
-              </li>
-            </ul>
-          </li> -->
-          <li tabindex="0">
-            <a class="justify-between">Galerie</a>
-            <ul class="p-2">
-              <li>
-                <a href={`${import.meta.env.BASE_URL}schuetzenfest2025`}>Schützenfest 2025</a>
-              </li>
-              <li>
-                <a href={`${import.meta.env.BASE_URL}jugend_galerie`}>Jugend</a>
-              </li>
+              <li><a href={`${import.meta.env.BASE_URL}schuetzenfest2025/`}>Schützenfest 2025</a></li>
             </ul>
           </li>
         </ul>
@@ -193,7 +145,7 @@
   }
 
   .menu > li.dropdown > a::after {
-    content: '▼';
+    content: "▼";
     font-size: 0.7em;
     margin-left: 0.25em;
     vertical-align: middle;

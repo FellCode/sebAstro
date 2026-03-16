@@ -7,24 +7,27 @@
 	font-family: 'Quicksand';
 	font-style: normal;
 	font-weight: 400;
+	font-display: swap;
 	src: local(''),
-	url('../fonts/quicksand-v29-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-	url('../fonts/quicksand-v29-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	url('/assets/fonts/quicksand-v29-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	url('/assets/fonts/quicksand-v29-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* quicksand-700 - latin */
 @font-face {
 	font-family: 'Quicksand';
 	font-style: normal;
 	font-weight: 700;
+	font-display: swap;
 	src: local(''),
-	url('../fonts/quicksand-v29-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-	url('../fonts/quicksand-v29-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	url('/assets/fonts/quicksand-v29-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	url('/assets/fonts/quicksand-v29-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
 	font-family: 'Quicksand';
 	font-style: normal;
 	font-weight: 300;
+	font-display: swap;
 	src: local(''),
 	url('/assets/fonts/quicksand-v29-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
 	url('/assets/fonts/quicksand-v29-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
@@ -36,6 +39,7 @@
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 400;
+	font-display: swap;
 	src: local(''),
 	url('/assets/fonts/open-sans-v29-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
 	url('/assets/fonts/open-sans-v29-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
@@ -45,6 +49,7 @@
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 700;
+	font-display: swap;
 	src: local(''),
 	url('/assets/fonts/open-sans-v29-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
 	url('/assets/fonts/open-sans-v29-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
@@ -54,9 +59,10 @@
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 300;
+	font-display: swap;
 	src: local(''),
-	url('/assets/fonts/open-sans-v29-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-	url('/assets/fonts/open-sans-v29-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	url('/assets/fonts/open-sans-v29-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	url('/assets/fonts/open-sans-v29-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
  *{
@@ -68,6 +74,29 @@
 html {
 	font: normal 16px sans-serif;
 	scroll-behavior: smooth;
+}
+
+/* Tastatur-Fokus klar sichtbar halten */
+:focus-visible {
+  outline: 3px solid #0f5132;
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  transform: translateY(-200%);
+  z-index: 200;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  padding: 0.5rem 0.75rem;
+  color: #111827;
+  text-decoration: none;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
 }
 
 /* Beispiel: Hoverbereich erweitern */

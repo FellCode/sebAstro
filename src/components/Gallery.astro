@@ -3,27 +3,25 @@ import fs from "fs";
 import path from "path";
 
 interface Props {
-  folder: string; // relativer Pfad aus dem /public Verzeichnis, z.B. "assets/img/gallery"
+  folder: string;
 }
 
 const { folder } = Astro.props;
+const normalizedFolder = folder.replace(/^\/+|\/+$/g, "");
+const galleryDir = path.join(process.cwd(), "public", normalizedFolder);
 
-// Absoluter Pfad zum Ordner im `public` Verzeichnis
-const galleryDir = path.join(process.cwd(), "public", folder);
-
-// Bilder im Ordner filtern
-let imageFiles: string[] = [];
+let imageFiles: string[];
 try {
   imageFiles = fs
     .readdirSync(galleryDir)
-    .filter((file) => /\.(jpe?g|png|webp)$/i.test(file));
+    .filter((file) => /\.(jpe?g|png|webp)$/i.test(file))
+    .sort((a, b) => a.localeCompare(b));
 } catch {
   imageFiles = [];
 }
 
-// URLs für GitHub Pages / Base-URL
 const images = imageFiles.map(
-  (file) => `${import.meta.env.BASE_URL}${folder}/${file}`
+  (file) => `${import.meta.env.BASE_URL}${normalizedFolder}/${file}`
 );
 ---
 
@@ -31,32 +29,35 @@ const images = imageFiles.map(
   <div class="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-6">
     {
       images.map((src, i) => (
-        <img
-          src={src}
-          alt={`Bild ${i + 1}`}
-          loading="lazy"
-          role="button"
-          tabindex="0"
-          class="w-full h-[300px] rounded-md object-cover cursor-pointer transition-transform hover:scale-105 border-2"
-          onclick={`window.openImage(${i})`}
-          onkeydown={`
-            if(event.key === 'Enter' || event.key === ' ') {
-              event.preventDefault();
-              window.openImage(${i});
-            }
-          `}
-        />
+        <button
+          type="button"
+          class="w-full rounded-md overflow-hidden border-2 text-left"
+          data-gallery-thumb
+          data-index={i}
+          aria-label={`Bild ${i + 1} vergrößern`}
+        >
+          <img
+            src={src}
+            alt={`Galeriebild ${i + 1}`}
+            loading="lazy"
+            decoding="async"
+            class="w-full h-[300px] object-cover cursor-pointer transition-transform hover:scale-105"
+          />
+        </button>
       ))
     }
   </div>
 
   <div
     id="overlay"
-    class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center"
+    class="hidden fixed inset-0 bg-black/80 z-50 items-center justify-center"
+    aria-hidden="true"
   >
     <button
-      onclick="event.stopPropagation(); window.prevImage();"
+      type="button"
+      data-gallery-prev
       class="absolute left-4 text-white text-4xl px-3 py-2 bg-black/40 hover:bg-black/60 rounded-full"
+      aria-label="Vorheriges Bild"
     >
       ‹
     </button>
@@ -66,73 +67,116 @@ const images = imageFiles.map(
       src=""
       alt="Großansicht"
       class="max-w-[90%] max-h-[90%] rounded-lg shadow-lg select-none"
-      onclick="event.stopPropagation();"
     />
 
     <button
-      onclick="event.stopPropagation(); window.nextImage();"
+      type="button"
+      data-gallery-next
       class="absolute right-4 text-white text-4xl px-3 py-2 bg-black/40 hover:bg-black/60 rounded-full"
+      aria-label="Nächstes Bild"
     >
       ›
     </button>
 
     <button
-      onclick="window.closeImage();"
+      type="button"
+      data-gallery-close
       class="absolute top-4 right-4 text-white text-3xl px-3 py-1 bg-black/40 hover:bg-black/60 rounded-full"
+      aria-label="Overlay schließen"
     >
       ✕
     </button>
   </div>
 </section>
 
-<script
-  type="module"
-  is:browser
-  set:html={`
-  const images = ${JSON.stringify(images)};
-  let currentIndex = 0;
+<script is:inline define:vars={{ images }}>
+  const overlay = document.getElementById("overlay");
+  const overlayImg = document.getElementById("overlay-img");
+  const prevBtn = document.querySelector("[data-gallery-prev]");
+  const nextBtn = document.querySelector("[data-gallery-next]");
+  const closeBtn = document.querySelector("[data-gallery-close]");
+  const thumbs = document.querySelectorAll("[data-gallery-thumb]");
 
-  window.openImage = (index) => {
-    currentIndex = index;
-    document.getElementById('overlay').classList.remove('hidden');
-    updateImage();
-  };
+  if (!overlay || !overlayImg || !prevBtn || !nextBtn || !closeBtn || !thumbs.length) {
+    // Keine Galerieelemente vorhanden.
+  } else {
+    let currentIndex = 0;
 
-  window.closeImage = () => {
-    document.getElementById('overlay').classList.add('hidden');
-  };
+    const updateImage = () => {
+      overlayImg.src = images[currentIndex];
+    };
 
-  function updateImage() {
-    document.getElementById('overlay-img').src = images[currentIndex];
+    const openImage = (index) => {
+      currentIndex = index;
+      updateImage();
+      overlay.classList.remove("hidden");
+      overlay.classList.add("flex");
+      overlay.setAttribute("aria-hidden", "false");
+      closeBtn.focus();
+    };
+
+    const closeImage = () => {
+      overlay.classList.add("hidden");
+      overlay.classList.remove("flex");
+      overlay.setAttribute("aria-hidden", "true");
+    };
+
+    const prevImage = () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateImage();
+    };
+
+    const nextImage = () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateImage();
+    };
+
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener("click", () => {
+        const index = Number(thumb.getAttribute("data-index"));
+        openImage(index);
+      });
+    });
+
+    prevBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      prevImage();
+    });
+
+    nextBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      nextImage();
+    });
+
+    closeBtn.addEventListener("click", () => closeImage());
+
+    overlay.addEventListener("click", () => closeImage());
+    overlayImg.addEventListener("click", (event) => event.stopPropagation());
+
+    document.addEventListener("keydown", (event) => {
+      if (overlay.classList.contains("hidden")) return;
+      if (event.key === "Escape") closeImage();
+      if (event.key === "ArrowLeft") prevImage();
+      if (event.key === "ArrowRight") nextImage();
+    });
+
+    let touchStartX = 0;
+    overlay.addEventListener(
+      "touchstart",
+      (event) => {
+        touchStartX = event.changedTouches[0].screenX;
+      },
+      { passive: true }
+    );
+    overlay.addEventListener(
+      "touchend",
+      (event) => {
+        const touchEndX = event.changedTouches[0].screenX;
+        if (Math.abs(touchEndX - touchStartX) <= 50) return;
+        if (touchEndX > touchStartX) prevImage();
+        else nextImage();
+      },
+      { passive: true }
+    );
   }
-
-  window.prevImage = () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateImage();
-  };
-
-  window.nextImage = () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateImage();
-  };
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') window.closeImage();
-    if (e.key === 'ArrowLeft') window.prevImage();
-    if (e.key === 'ArrowRight') window.nextImage();
-  });
-
-  let touchStartX = 0;
-  let touchEndX = 0;
-  document.getElementById('overlay').addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
-  document.getElementById('overlay').addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    if (Math.abs(touchEndX - touchStartX) > 50) {
-      if (touchEndX > touchStartX) window.prevImage();
-      else window.nextImage();
-    }
-  }, { passive: true });
-`}
-/>
+</script>

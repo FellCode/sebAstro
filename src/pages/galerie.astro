@@ -2,22 +2,23 @@
 import Layout from "../layouts/Layout.astro";
 import Gallery from "../components/Gallery.astro";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
+import HeroBanner from "../components/HeroBanner.astro";
+import heroImage from "../assets/images/hero.webp";
 ---
 
-<Layout>
+<Layout
+  title="Galerie | St. Sebastianus Schützenbruderschaft Horrem"
+  description="Fotogalerie der St. Sebastianus Schützenbruderschaft Horrem mit Eindrücken aus dem Vereinsleben."
+>
   <section
     class="relative flex min-h-screen flex-col items-center justify-center text-center text-white"
   >
-    <div
-      class="absolute inset-0 -z-10 bg-cover bg-[#1f7a1f]"
-      style={`background-image: url(${import.meta.env.BASE_URL}assets/img/hero.webp)`}
-    >
-    </div>
+    <HeroBanner image={heroImage} alt="Hero-Bild der Galerie" />
     <div class="mt-24">
       <h1
         class="text-[36px] sm:text-[60px] font-bold font-['Open_Sans'] mb-4 text-white"
       >
-        Schützenfest 2025
+        Galerie
       </h1>
     </div>
     <ScrollIndicator />
@@ -26,9 +27,7 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
     class="bg-[#83cea5] px-8 sm:px-10 lg:px-20 py-24 items-center justify-center"
   >
     <div>
-      <Gallery
-        folder={`${import.meta.env.BASE_URL}assets/img/schuetzenfest_2025`}
-      />
+      <Gallery folder="assets/img/schuetzenfest_2025" />
     </div>
   </section>
 </Layout>

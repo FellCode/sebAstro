@@ -2,17 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
 import Gallery from "../components/Gallery.astro";
+import HeroBanner from "../components/HeroBanner.astro";
+import heroImage from "../assets/images/hero.webp";
 ---
 
-<Layout>
+<Layout
+  title="Vermietung Vereinsheim | St. Sebastianus Schützenbruderschaft Horrem"
+  description="Informationen zur Vermietung des Vereinsheims inklusive Ansprechpartner und Rahmenbedingungen."
+>
   <section
     class="relative flex min-h-screen flex-col items-center justify-center text-center text-white"
   >
-    <div
-      class="absolute inset-0 -z-10 bg-cover bg-[#1f7a1f]"
-      style={`background-image: url(${import.meta.env.BASE_URL}assets/img/hero.webp)`}
-    >
-    </div>
+    <HeroBanner image={heroImage} alt="Hero-Bild Vermietung" />
     <div class="mt-24">
       <h3 class="text-[28px] font-normal font-['Open_Sans'] mb-5 text-white">
        Informationen zur

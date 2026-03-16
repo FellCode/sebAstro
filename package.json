@@ -7,7 +7,8 @@
     "dev:local": "astro dev --config astro.config.dev.mjs",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lh:ci": "lhci autorun"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
@@ -15,7 +16,9 @@
     "astro-icon": "^1.1.5"
   },
   "devDependencies": {
+    "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^6.0.2",
+    "@lhci/cli": "^0.15.0",
     "@tailwindcss/postcss": "^4.1.11",
     "autoprefixer": "^10.4.21",
     "daisyui": "^5.0.50",

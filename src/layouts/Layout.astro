@@ -7,9 +7,47 @@ import "../styles/global.css";
 
 export interface Props {
   title?: string;
+  description?: string;
+  ogImage?: string;
+  noindex?: boolean;
 }
-const { title = "St. Sebastianus Schützenbruderschaft Horrem seit 1550 e.V." } =
-  Astro.props;
+
+const {
+  title = "St. Sebastianus Schützenbruderschaft Horrem seit 1550 e.V.",
+  description = "Die Vereinsseite der St. Sebastianus Schützenbruderschaft in Kerpen Horrem mit Informationen rund um den Alltag und die Angebote der Bruderschaft.",
+  ogImage,
+  noindex = false,
+} = Astro.props;
+
+const originBase = Astro.site ?? Astro.url;
+const canonicalUrl = new URL(Astro.url.pathname, originBase).toString();
+const resolvedOgImage = ogImage
+  ? new URL(ogImage, originBase).toString()
+  : new URL(`${import.meta.env.BASE_URL}assets/img/hero.webp`, originBase).toString();
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  name: "St. Sebastianus Schützenbruderschaft Horrem seit 1550 e.V.",
+  url: new URL(import.meta.env.BASE_URL, originBase).toString(),
+  email: "kontakt@seb-horrem.de",
+  sameAs: ["https://instagram.com", "https://facebook.com", "https://tiktok.com"],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Mittelstraße 58",
+    postalCode: "50169",
+    addressLocality: "Kerpen",
+    addressCountry: "DE",
+  },
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "St. Sebastianus Schützenbruderschaft Horrem",
+  url: new URL(import.meta.env.BASE_URL, originBase).toString(),
+  inLanguage: "de-DE",
+};
 ---
 
 <!doctype html>
@@ -18,26 +56,36 @@ const { title = "St. Sebastianus Schützenbruderschaft Horrem seit 1550 e.V." } 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content="Die Vereinsseite der Sankt Sebastianus Schuetzenbruderschaft in Kerpen Horrem
-    	mit Informationen rund um den Alltag und Angeboten der Bruderschaft"
-    />
-    <meta
-      property="og:title"
-      content="St. Sebastianus Schützenbruderschaft Horrem seit 1550 e.V."
-    />
-    <meta
-      property="og:description"
-      content="Infos rund um die Bruderschaft in Kerpen Horrem."
-    />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={resolvedOgImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={resolvedOgImage} />
+
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+
     <title>{title}</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
     <BackToTopButton />
     <Header />
-    <slot />
+    <main id="main-content">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>

@@ -1,9 +1,16 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
+import qrInstagram from "../assets/images/qr-instagram.png";
+import qrFacebook from "../assets/images/qr-facebook.png";
+import qrTiktok from "../assets/images/qr-tiktok.png";
 ---
 
-<Layout>
+<Layout
+  title="Social Media | St. Sebastianus Schützenbruderschaft Horrem"
+  description="Folge der Bruderschaft auf Instagram, Facebook und TikTok. Hier findest du die offiziellen Social-Media-Kanäle."
+>
   <section
     class="relative flex min-h-screen flex-col items-center justify-center text-center text-white"
   >
@@ -11,14 +18,12 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
     <div class="mt-24">
       <h1
         class="text-[36px] sm:text-[60px] font-bold font-['Open_Sans'] mb-4 text-[#555]"
-        ]
       >
         Unsere Social Media Kanäle
       </h1>
-      <h3 class="text-[28px] font-normal font-['Open_Sans'] mb-5 text-[#555]">
-        Auf folgenden Social Media Kanäle könnt ihr uns folgen oder uns
-        abonnieren
-      </h3>
+      <h2 class="text-[28px] font-normal font-['Open_Sans'] mb-5 text-[#555]">
+        Auf folgenden Social-Media-Kanälen könnt ihr uns folgen und abonnieren.
+      </h2>
     </div>
     <ScrollIndicator />
   </section>
@@ -28,84 +33,96 @@ import ScrollIndicator from "../components/ScrollIndicator.astro";
     <div class="flex flex-col lg:flex-row justify-around m-8 gap-12">
       <div class="card bg-[#83cea5] shadow-sm">
         <figure class="p-8">
-          <img
-            src={`${import.meta.env.BASE_URL}assets/img/qr-instagram.png`}
-            alt="QR-Code für das Instagram Profil"
+          <Image
+            src={qrInstagram}
+            alt="QR-Code für das Instagram-Profil"
             class="max-w-64 rounded-md"
+            widths={[256, 384, 512]}
+            sizes="256px"
+            loading="lazy"
+            decoding="async"
           />
         </figure>
-        <hr
-          class="w-48 h-[2px] mx-auto bg-gray-100 border-0 rounded-sm dark:bg-[#555]"
-        />
+        <hr class="w-48 h-[2px] mx-auto bg-gray-100 border-0 rounded-sm dark:bg-[#555]" />
         <div class="card-body">
-          <h2 class="card-title">Instagram</h2>
+          <h3 class="card-title">Instagram</h3>
           <p class="max-w-96 text-left">
-            Scan den QR-Code oder klick auf den Button um unser Instagram Profil<br
-            />
-            zu besuchen und uns für qualitatitv Hochwertige Bilder und Stories zu
-            abonnieren
+            Scanne den QR-Code oder nutze den Button, um unser Instagram-Profil
+            zu besuchen.
           </p>
           <div class="card-actions justify-end">
-            <button class="btn btn-error"
-              ><a href="https://instagram.com" target="_blank">Instagram</a
-              ></button
+            <a
+              class="btn btn-error"
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
             >
+              Instagram
+            </a>
           </div>
         </div>
       </div>
 
       <div class="card bg-[#83cea5] shadow-sm">
         <figure class="p-8">
-          <img
-            src={`${import.meta.env.BASE_URL}assets/img/qr-facebook.png`}
-            alt="QR-Code für das Facebook Profil"
+          <Image
+            src={qrFacebook}
+            alt="QR-Code für das Facebook-Profil"
             class="max-w-64 rounded-md"
+            widths={[256, 384, 512]}
+            sizes="256px"
+            loading="lazy"
+            decoding="async"
           />
         </figure>
-        <hr
-          class="w-48 h-[2px] mx-auto bg-gray-100 border-0 rounded-sm dark:bg-[#555]"
-        />
+        <hr class="w-48 h-[2px] mx-auto bg-gray-100 border-0 rounded-sm dark:bg-[#555]" />
         <div class="card-body">
-          <h2 class="card-title">Facebook</h2>
+          <h3 class="card-title">Facebook</h3>
           <p class="max-w-96 text-left">
-            Scan den QR-Code oder klick auf den Button um unser Instagram Profil<br
-            />
-            zu besuchen und uns für qualitatitv Hochwertige Bilder und Stories zu
-            abonnieren
+            Scanne den QR-Code oder nutze den Button, um unser Facebook-Profil
+            zu besuchen.
           </p>
           <div class="card-actions justify-end">
-            <button class="btn btn-info"
-              ><a href="https://instagram.com" target="_blank">Facebook</a
-              ></button
+            <a
+              class="btn btn-info"
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
             >
+              Facebook
+            </a>
           </div>
         </div>
       </div>
 
       <div class="card bg-[#83cea5] shadow-sm">
         <figure class="p-8">
-          <img
-            src={`${import.meta.env.BASE_URL}assets/img/qr-tiktok.png`}
-            alt="QR-Code für das TikTok Profil"
+          <Image
+            src={qrTiktok}
+            alt="QR-Code für das TikTok-Profil"
             class="max-w-64 rounded-md"
+            widths={[256, 384, 512]}
+            sizes="256px"
+            loading="lazy"
+            decoding="async"
           />
         </figure>
-        <hr
-          class="w-48 h-[2px] mx-auto bg-gray-100 border-0 rounded-sm dark:bg-[#555]"
-        />
+        <hr class="w-48 h-[2px] mx-auto bg-gray-100 border-0 rounded-sm dark:bg-[#555]" />
         <div class="card-body">
-          <h2 class="card-title">TikTok</h2>
+          <h3 class="card-title">TikTok</h3>
           <p class="max-w-96 text-left">
-            Scan den QR-Code oder klick auf den Button um unser Instagram Profil<br
-            />
-            zu besuchen und uns für qualitatitv Hochwertige Bilder und Stories zu
-            abonnieren
+            Scanne den QR-Code oder nutze den Button, um unser TikTok-Profil
+            zu besuchen.
           </p>
           <div class="card-actions justify-end">
-            <button class="btn btn-neutral"
-              ><a href="https://instagram.com" target="_blank">TikTok</a
-              ></button
+            <a
+              class="btn btn-neutral"
+              href="https://tiktok.com"
+              target="_blank"
+              rel="noopener noreferrer"
             >
+              TikTok
+            </a>
           </div>
         </div>
       </div>

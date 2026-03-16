@@ -2,17 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import Gallery from "../components/Gallery.astro";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
+import HeroBanner from "../components/HeroBanner.astro";
+import heroImage from "../assets/images/hero.webp";
 ---
 
-<Layout>
+<Layout
+  title="Schützenfest 2025 | Galerie"
+  description="Die schönsten Momente vom Schützenfest 2025 der St. Sebastianus Schützenbruderschaft Horrem."
+>
   <section
     class="relative flex min-h-screen flex-col items-center justify-center text-center text-white"
   >
-    <div
-      class="absolute inset-0 -z-10 bg-cover bg-[#1f7a1f]"
-      style={`background-image: url(${import.meta.env.BASE_URL}assets/img/hero.webp)`}
-    >
-    </div>
+    <HeroBanner image={heroImage} alt="Hero-Bild Schützenfest" />
     <div class="mt-24">
       <h3 class="text-[28px] font-normal font-['Open_Sans'] mb-5 text-white">
         Hier findest du unsere schönsten Momente vom

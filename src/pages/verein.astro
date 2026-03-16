@@ -1,17 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
+import HeroBanner from "../components/HeroBanner.astro";
+import vereinImage from "../assets/images/verein.jpg";
 ---
 
-<Layout>
+<Layout
+  title="Der Verein | St. Sebastianus Schützenbruderschaft Horrem"
+  description="Überblick über den Verein mit Bereichen wie Schießsport, Jugend, Vorstand und Vermietung."
+>
   <section
     class="relative flex min-h-screen flex-col items-center justify-center text-center text-white"
   >
-    <div
-      class="absolute inset-0 -z-10 bg-cover bg-[#1f7a1f]"
-      style={`background-image: url(${import.meta.env.BASE_URL}assets/img/verein.jpg)`}
-    >
-    </div>
+    <HeroBanner image={vereinImage} alt="Vereinsheim der Schützenbruderschaft" />
     <div class="mt-24">
       <h3 class="text-[28px] font-normal font-['Open_Sans'] mb-5 text-white">
         Das ist die

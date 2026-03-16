@@ -1,29 +1,43 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import ScrollIndicator from '../components/ScrollIndicator.astro'
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import ScrollIndicator from "../components/ScrollIndicator.astro";
+import HeroBanner from "../components/HeroBanner.astro";
+import heroImage from "../assets/images/hero.webp";
+import majestaetenImage from "../assets/images/majestaeten.webp";
+import bezirksprinzImage from "../assets/images/bezirksprinz.jpeg";
 ---
 
-<Layout>
+<Layout
+  title="Amtierende Majestäten | St. Sebastianus Schützenbruderschaft Horrem"
+  description="Vorstellung der amtierenden Majestäten der St. Sebastianus Schützenbruderschaft Horrem."
+>
   <section
     class="relative flex min-h-screen flex-col items-center justify-center text-center text-white"
   >
-    <div
-      class="absolute inset-0 -z-10 bg-cover bg-[#1f7a1f]"
-      style={`background-image: url(${import.meta.env.BASE_URL}assets/img/hero.webp)`}
-    >
-    </div>
+    <HeroBanner image={heroImage} alt="Hero-Bild der Majestäten" />
     <div class="mt-24">
-      <h1 class="text-[36px] sm:text-[60px] font-bold font-['Open_Sans'] mb-4 text-white">
-        Amtierende Majestäten der St. Sebastianus Schützenbruderschaft Horrem<br />
+      <h1
+        class="text-[36px] sm:text-[60px] font-bold font-['Open_Sans'] mb-4 text-white"
+      >
+        Amtierende Majestäten der St. Sebastianus Schützenbruderschaft Horrem<br
+        />
         seit 1550 e.V.
       </h1>
     </div>
     <ScrollIndicator />
   </section>
-  <section class="flex flex-col items-center bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 text-center">
-    <img
-      class="max-w-[800px] mb-2 border-2 border-[#d4ffe7] rounded-sm mx-auto w-full"
-      src={`${import.meta.env.BASE_URL}assets/img/majestaeten.webp`}
+  <section
+    class="flex flex-col items-center bg-[#83cea5] px-6 sm:px-10 lg:px-20 py-24 text-center"
+  >
+    <Image
+      src={majestaetenImage}
+      class="max-w-[800px] mb-2 border-2 rounded-sm mx-auto w-full"
+      alt="Gruppenfoto der amtierenden Majestäten"
+      widths={[640, 960, 1280, 1600]}
+      sizes="(min-width: 1024px) 800px, 100vw"
+      loading="lazy"
+      decoding="async"
     />
     <p class="text-[#666]">
       Von Links nach Rechts:<br />
@@ -35,12 +49,25 @@ import ScrollIndicator from '../components/ScrollIndicator.astro'
     </p>
   </section>
 
-  <section class="flex flex-col items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24 text-center">
-    <h3 class="text-[28px] font-normal font-['Open_Sans'] mb-2 text-[#666]">Bezirksschülerprinz</h3>
-    <img
-      class="max-w-[600px] mb-2 border-2 border-[#83cea5] rounded-sm mx-auto w-full"
-      src={`${import.meta.env.BASE_URL}assets/img/bezirksprinz.jpeg`}
+
+    <section
+    class="flex flex-col items-center bg-[#d4ffe7] px-6 sm:px-10 lg:px-20 py-24 text-center"
+  >
+
+  <h3 class="text-[28px] font-normal font-['Open_Sans'] mb-2 text-[#666]">
+        Bezirksschülerprinz
+      </h3>
+    <Image
+      src={bezirksprinzImage}
+      class="max-w-[800px] mb-2 border-2 rounded-sm mx-auto w-full"
+      alt="Porträt des Bezirksschülerprinzen"
+      widths={[640, 960, 1200]}
+      sizes="(min-width: 1024px) 800px, 100vw"
+      loading="lazy"
+      decoding="async"
     />
-    <p class="text-[#666]">Jannis Callsen</p>
+    <p class="text-[#666]">
+      Jannis Callsen
+    </p>
   </section>
 </Layout>

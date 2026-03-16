@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fellcode.github.io/sebAstro/sitemap-index.xml
