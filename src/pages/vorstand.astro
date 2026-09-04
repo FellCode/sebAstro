@@ -4,8 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import ScrollIndicator from "../components/ScrollIndicator.astro";
 import HeroBanner from "../components/HeroBanner.astro";
 import heroImage from "../assets/images/hero.webp";
-import vorstandGroupImage from "../assets/images/vorstand.JPG";
-import vorstandCardImage from "../assets/images/vorstand.webp";
+import vorstandCardImage from "../assets/images/placeholder-people.svg";
 ---
 
 <Layout
@@ -26,7 +25,7 @@ import vorstandCardImage from "../assets/images/vorstand.webp";
 
   <section class="section-shell section-light flex flex-col items-center text-center">
     <Image
-      src={vorstandGroupImage}
+      src={vorstandCardImage}
       class="max-w-[600px] mb-2 border-2 rounded-sm mx-auto w-full"
       alt="Gruppenfoto des geschäftsführenden Vorstands"
       widths={[600, 900, 1200]}
@@ -39,7 +38,7 @@ import vorstandCardImage from "../assets/images/vorstand.webp";
       <strong> Brudermeister</strong><em> Christian Kurm</em><br />
       <strong>Stellv. Brudermeisterin</strong><em> Angelika Dahmen</em><br />
       <strong>Geschäftsführer</strong><em> Hans-Wilhelm Dahmen</em><br />
-      <strong>Schatzmeisterin</strong><em> Jana Seifert</em>
+      <strong>Schatzmeister</strong><em> Heinz-Erhardt-Clermont</em>
     </p>
   </section>
 
@@ -117,7 +116,7 @@ import vorstandCardImage from "../assets/images/vorstand.webp";
           <figure>
             <Image
               src={vorstandCardImage}
-              alt="Porträt Schatzmeisterin Jana Seifert"
+              alt="Porträt Schatzmeister Heinz-Erhardt Clermont"
               class="object-cover h-96 w-full"
               widths={[480, 768, 1200]}
               sizes="(min-width: 768px) 50vw, 100vw"
@@ -126,8 +125,8 @@ import vorstandCardImage from "../assets/images/vorstand.webp";
             />
           </figure>
           <div class="card-body items-center text-center">
-            <h3 class="card-title">Schatzmeisterin</h3>
-            <p class="text-lg">Jana Seifert</p>
+            <h3 class="card-title">Schatzmeister</h3>
+            <p class="text-lg">Heinz-Erhardt Clermont</p>
             <a
               href="mailto:schatzmeister@seb-horrem.de"
               class="underline text-green-400"
@@ -157,7 +156,7 @@ import vorstandCardImage from "../assets/images/vorstand.webp";
 
             <div class="mt-4 space-y-4">
               <div class="grid grid-cols-2 gap-x-40">
-                <span class="font-semibold">Stellv. Kassiererin:</span>
+                <span class="font-semibold">Stellv. Schatzmeisterin:</span>
                 <span class="text-right">Magdalena Baumeister</span>
               </div>
               <div class="grid grid-cols-2 gap-x-40">
