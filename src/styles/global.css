@@ -1,6 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: dark --default;
+}
+
+@theme {
+  --color-brand: #83cea5;
+  --color-surface: #d4ffe7;
+  --color-text-heading: #555;
+  --color-text-muted: #666;
+  --font-sans: "Open Sans", sans-serif;
+}
 
 /* quicksand-regular - latin */
 @font-face {
@@ -64,12 +73,6 @@
 	url('/assets/fonts/open-sans-v29-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
 	url('/assets/fonts/open-sans-v29-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-
- *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
 
 html {
 	font: normal 16px sans-serif;
